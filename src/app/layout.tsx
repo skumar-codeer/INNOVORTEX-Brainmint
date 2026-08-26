@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google';
 import '@/styles/globals.css';
-import { Navbar } from '@/components/navigation/Navbar';
-import { Footer } from '@/components/navigation/Footer';
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
 import { COMPANY_NAME, BRAND_TAGLINE, BRAND_POSITIONING } from '@/lib/constants';
 
 const spaceGrotesk = Space_Grotesk({
@@ -63,9 +63,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="bg-brand-dark text-white font-body antialiased flex flex-col min-h-screen">
+      <body className="bg-brand-dark text-white font-body antialiased flex flex-col min-h-screen overflow-x-hidden">
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow pt-20">{children}</main>
         <Footer />
       </body>
     </html>

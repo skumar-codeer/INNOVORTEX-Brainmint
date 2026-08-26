@@ -1,64 +1,33 @@
 import { NavLink } from '@/types';
 
 export const MAIN_NAVIGATION: NavLink[] = [
-  { label: 'Home', href: '/' },
-  {
-    label: 'Products',
-    href: '/products/safeedge',
-    subLinks: [
-      {
-        label: 'SafeEdge™ Platform',
-        href: '/products/safeedge',
-        description: 'Edge AI Safety & Alert Infrastructure',
-      },
-    ],
-  },
+  { label: 'Products', href: '/products/safeedge' },
   { label: 'Technology', href: '/technology' },
-  {
-    label: 'Solutions',
-    href: '/solutions',
-    subLinks: [
-      { label: "Women's Hostels", href: '/solutions#womens-hostels' },
-      { label: 'Educational Campuses', href: '/solutions#educational-campuses' },
-      { label: 'Workplaces', href: '/solutions#workplaces' },
-      { label: 'Healthcare Facilities', href: '/solutions#healthcare-facilities' },
-      { label: 'Public Infrastructure', href: '/solutions#public-infrastructure' },
-      { label: 'Rural & Low-Connectivity', href: '/solutions#rural-areas' },
-    ],
-  },
+  { label: 'Solutions', href: '/solutions' },
   { label: 'Impact', href: '/impact' },
-  { label: 'About Us', href: '/about' },
-  { label: 'Vision', href: '/vision' },
-  { label: 'Roadmap', href: '/roadmap' },
-  { label: 'Trust & AI Ethics', href: '/trust' },
+  { label: 'About', href: '/about' },
   { label: 'Resources', href: '/resources' },
+  { label: 'Dashboard Demo', href: '/dashboard' },
 ];
 
-export const FOOTER_LINKS = {
-  products: [
-    { label: 'SafeEdge™ Platform', href: '/products/safeedge' },
-    { label: 'Hardware Specifications', href: '/products/safeedge#specs' },
-    { label: 'System Dashboard', href: '/#dashboard' },
-  ],
-  solutions: [
-    { label: "Women's Hostels", href: '/solutions#womens-hostels' },
-    { label: 'Educational Campuses', href: '/solutions#educational-campuses' },
-    { label: 'Workplaces', href: '/solutions#workplaces' },
-    { label: 'Healthcare Facilities', href: '/solutions#healthcare-facilities' },
-    { label: 'Public Infrastructure', href: '/solutions#public-infrastructure' },
-    { label: 'Rural & Low-Connectivity', href: '/solutions#rural-areas' },
-  ],
-  company: [
-    { label: 'About Us', href: '/about' },
-    { label: 'Vision', href: '/vision' },
-    { label: 'Roadmap', href: '/roadmap' },
-    { label: 'Trust & Ethics', href: '/trust' },
+export const FOOTER_NAVIGATION = {
+  main: [
+    { label: 'Products', href: '/products/safeedge' },
+    { label: 'Technology', href: '/technology' },
+    { label: 'Solutions', href: '/solutions' },
+    { label: 'Impact', href: '/impact' },
+    { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
-    { label: 'Request Demo', href: '/request-demo' },
+    { label: 'Resources', href: '/resources' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '/privacy' },
-    { label: 'Terms of Service', href: '/terms' },
-    { label: 'Responsible AI Policy', href: '/responsible-ai' },
+    { label: 'Terms', href: '/terms' },
+    { label: 'Responsible AI', href: '/responsible-ai' },
+  ],
+  socials: [
+    { label: 'LinkedIn', href: 'https://linkedin.com', placeholder: true },
+    { label: 'Instagram', href: 'https://instagram.com', placeholder: true },
+    { label: 'YouTube', href: 'https://youtube.com', placeholder: true },
   ],
 };

@@ -1,50 +1,102 @@
 import React from 'react';
 import { Section } from '@/components/ui/Section';
 import { Container } from '@/components/ui/Container';
-import { COMPANY_NAME } from '@/lib/constants';
+import { SectionHeading } from '@/components/ui/SectionHeading';
+import { Card } from '@/components/ui/Card';
+import { Cpu, Lock, WifiOff, ShieldCheck, UserCheck } from 'lucide-react';
 
 export const metadata = {
-  title: 'Privacy Policy | INNOVORTEX',
-  description: 'INNOVORTEX privacy policy regarding website usage, contact forms, and SafeEdge zero-cloud video privacy principles.',
+  title: 'Privacy Policy & Core Data Governance | INNOVORTEX',
+  description: 'INNOVORTEX privacy principles detailing local edge processing, data isolation, and responsible AI deployment.',
 };
 
 export default function PrivacyPage() {
   return (
-    <div className="pt-24">
-      <Section theme="dark">
+    <div className="pt-20 bg-brand-light min-h-screen text-brand-dark">
+      <Section theme="light" className="py-16 sm:py-24">
         <Container>
-          <div className="max-w-3xl mx-auto space-y-6">
-            <h1 className="text-4xl font-bold font-heading text-white">Privacy Policy</h1>
-            <p className="text-xs font-mono text-brand-cyan">Last Updated: August 2026</p>
+          <SectionHeading
+            theme="light"
+            eyebrow="DATA GOVERNANCE"
+            title="Privacy Policy"
+            subtitle="INNOVORTEX is committed to privacy-conscious engineering. Our edge-first architecture is designed to respect individual dignity and protect sensitive physical spaces."
+          />
 
-            <div className="space-y-6 text-sm text-brand-mutedDark leading-relaxed border-t border-brand-borderDark pt-6">
-              <section className="space-y-2">
-                <h2 className="text-lg font-bold text-white font-heading">1. Introduction & Core Privacy Commitment</h2>
-                <p>
-                  At {COMPANY_NAME}, we are committed to upholding the highest standards of data privacy. This policy governs how we collect, process, and handle information submitted through our official website, as well as the fundamental privacy-by-design architecture built into our hardware products.
+          <div className="max-w-4xl mx-auto space-y-12">
+            {/* Principles Overview Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* 1. Local Processing */}
+              <Card variant="light" className="p-6 space-y-3">
+                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-cyan flex items-center justify-center">
+                  <Cpu className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold font-heading text-brand-dark">Local Processing</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Optical feeds and sensor inputs are evaluated locally on edge compute hardware. Raw video frames never leave physical local memory.
                 </p>
-              </section>
+              </Card>
 
-              <section className="space-y-2">
-                <h2 className="text-lg font-bold text-white font-heading">2. Zero-Cloud Video Retention Policy (SafeEdge™ Hardware)</h2>
-                <p>
-                  Our primary product, SafeEdge™, operates on a zero-cloud video processing architecture. Optical camera feeds are processed exclusively inside volatile RAM on local edge hardware and discarded immediately following neural evaluation. {COMPANY_NAME} does not stream, collect, store, or transmit raw camera video or facial biometric records to external cloud servers.
+              {/* 2. Minimal Data Exposure */}
+              <Card variant="light" className="p-6 space-y-3">
+                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-accent flex items-center justify-center">
+                  <Lock className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold font-heading text-brand-dark">Minimal Data Exposure</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Avoid unnecessary transmission or storage of visual information. Only transient anomaly metadata is processed during event evaluation.
                 </p>
-              </section>
+              </Card>
 
-              <section className="space-y-2">
-                <h2 className="text-lg font-bold text-white font-heading">3. Information Collected via Website Forms</h2>
-                <p>
-                  When you submit a contact inquiry or request a technical demonstration, we collect work contact information (e.g. name, work email address, organization name, and message details) strictly for the purpose of communicating with you regarding your inquiry. We do not sell or rent user contact data to third parties.
+              {/* 3. No Continuous Cloud Dependency */}
+              <Card variant="light" className="p-6 space-y-3">
+                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-alert flex items-center justify-center">
+                  <WifiOff className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold font-heading text-brand-dark">No Continuous Cloud Dependency</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Core safety detection operates independently off-grid without requiring continuous streaming to central cloud databases.
                 </p>
-              </section>
+              </Card>
 
-              <section className="space-y-2">
-                <h2 className="text-lg font-bold text-white font-heading">4. Contact Information</h2>
-                <p>
-                  For any privacy inquiries or formal data access requests, please contact privacy@innovortex.com.
+              {/* 4. Responsible Deployment */}
+              <Card variant="light" className="p-6 space-y-3">
+                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-cyan flex items-center justify-center">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold font-heading text-brand-dark">Responsible Deployment</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Deployment guidelines emphasize clear perimeter signage, explicit consent protocols, and strict access governance for sensitive environments.
                 </p>
-              </section>
+              </Card>
+            </div>
+
+            {/* Structured Legal Content */}
+            <div className="bg-white p-8 sm:p-10 rounded-2xl border border-gray-200 shadow-sm space-y-8 text-sm leading-relaxed text-gray-700">
+              <div className="space-y-3">
+                <h3 className="text-xl font-bold font-heading text-brand-dark">1. Human Oversight</h3>
+                <p>
+                  SafeEdge™ systems are engineered as decision-assist tools for security personnel. Automated alert dispatches are designed to assist human responders, with critical security decisions remaining under authorized human oversight.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <h3 className="text-xl font-bold font-heading text-brand-dark">2. Website Data Processing</h3>
+                <p>
+                  Information submitted through our website contact and demo request forms (such as name, work email, and organization) is used exclusively to respond to inquiries and discuss technical deployments. INNOVORTEX does not sell or distribute personal information to third parties.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <h3 className="text-xl font-bold font-heading text-brand-dark">3. Policy Updates</h3>
+                <p>
+                  This Privacy Policy is subject to alignment with our evolving product engineering and operational governance standards.
+                </p>
+              </div>
+
+              <div className="pt-6 border-t border-gray-100 flex items-center space-x-3 text-xs font-mono text-gray-500">
+                <UserCheck className="w-4 h-4 text-brand-dark shrink-0" />
+                <span>For privacy governance questions, contact: privacy@innovortex.ai</span>
+              </div>
             </div>
           </div>
         </Container>
