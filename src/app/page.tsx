@@ -8,149 +8,134 @@ import { Card } from '@/components/ui/Card';
 import {
   Camera,
   Cpu,
-  Radio,
   Bell,
   ArrowDown,
   ArrowRight,
-  ShieldAlert,
-  Clock,
-  Lock,
-  Eye,
   Zap,
   Volume2,
   Vibrate,
   Monitor,
   Activity,
-  Layers,
-  CheckCircle,
   ShieldCheck,
   GraduationCap,
   Building2,
   Hospital,
   Landmark,
   WifiOff,
-  Heart,
-  Bot,
-  Network,
-  Award,
-  FileCheck,
-  Building,
-  Users,
-  Target,
+  Mic,
+  Play,
+  FileText,
+  Smartphone,
+  ChevronRight,
 } from 'lucide-react';
 
 export default function HomePage() {
   return (
-    <div>
-      {/* SECTION 1 — HERO (DARK) */}
-      <Section theme="dark" className="pt-24 pb-16 sm:pt-32 sm:pb-24 border-b border-brand-borderDark/60 relative overflow-hidden">
-        {/* Background subtle grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1E2D4215_1px,transparent_1px),linear-gradient(to_bottom,#1E2D4215_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+    <div className="bg-[#05070D] text-[#F5F7FF] overflow-x-hidden">
+      {/* 1. HERO SECTION */}
+      <Section theme="dark" className="pt-28 pb-20 sm:pt-36 sm:pb-28 relative overflow-hidden">
+        {/* Ambient Radial Glow & Tech Grid */}
+        <div className="absolute inset-0 radial-glow-blue pointer-events-none" />
+        <div className="absolute inset-0 radial-glow-purple pointer-events-none" />
 
         <Container className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            {/* Left Content Area (7 columns) */}
+            {/* Left Headline Area (7 cols) */}
             <div className="lg:col-span-7 space-y-6 text-left">
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan text-xs font-mono tracking-wider uppercase">
-                <span>SafeEdge™ Platform</span>
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#35C8FF]/10 border border-[#35C8FF]/30 text-[#35C8FF] text-xs font-mono tracking-widest uppercase shadow-sm">
+                <span>EDGE AI · REAL-TIME · PRIVACY-FIRST</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-white tracking-tight leading-[1.1]">
-                Intelligence That Doesn’t Just Watch.{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-[#52E2FF] to-brand-accent">
-                  It Responds.
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-[#F5F7FF] tracking-tight leading-[1.1]">
+                Multimodal AI for{' '}
+                <span className="bg-gradient-to-r from-[#35C8FF] via-[#8B5CF6] to-[#22D3EE] bg-clip-text text-transparent">
+                  Women&apos;s Safety
                 </span>
+                , running entirely on the edge.
               </h1>
 
-              <p className="text-base sm:text-lg text-brand-mutedDark font-body leading-relaxed max-w-2xl">
-                INNOVORTEX builds privacy-conscious Edge AI systems that transform conventional surveillance into intelligent, real-time safety infrastructure.
+              <p className="text-base sm:text-lg text-[#9DA7BC] font-body leading-relaxed max-w-2xl">
+                INNOVORTEX fuses voice, visual and motion signals on a single low-power edge device — detecting distress in real time without sending raw audio or video to the cloud.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-                <Button href="/request-demo" variant="primary" size="lg">
-                  Request a Demo <ArrowRight className="w-4 h-4 ml-2" />
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <Button href="/technology" variant="primary" size="lg">
+                  Explore Project <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
-                <Button href="/technology" variant="outline" size="lg">
-                  Explore Our Technology
+                <Button href="/resources" variant="secondary" size="lg">
+                  Download Proposal
+                </Button>
+                <Button href="/dashboard" variant="outline" size="lg">
+                  Watch Prototype
                 </Button>
               </div>
             </div>
 
-            {/* Right Visual System Diagram (5 columns) */}
+            {/* Right Multimodal AI Core Visual Architecture (5 cols) */}
             <div className="lg:col-span-5 w-full">
-              <div className="p-6 rounded-2xl bg-brand-cardDark/90 border border-brand-borderDark shadow-2xl backdrop-blur-md space-y-3">
-                <div className="flex items-center justify-between pb-3 border-b border-brand-borderDark/80">
-                  <span className="text-xs font-mono tracking-widest text-brand-cyan uppercase">System Architecture</span>
-                  <Badge variant="cyan">Real-Time Flow</Badge>
+              <div className="p-6 sm:p-7 rounded-3xl bg-[#0B1020] border border-[#182238] shadow-2xl shadow-black/80 space-y-4 relative">
+                <div className="flex items-center justify-between pb-3 border-b border-[#182238]">
+                  <span className="text-xs font-mono tracking-widest text-[#35C8FF] uppercase">Node Architecture</span>
+                  <Badge variant="cyan">Multimodal Core</Badge>
                 </div>
 
-                {/* Node 1: CAMERA */}
-                <div className="p-3.5 rounded-xl bg-brand-dark/90 border border-brand-borderDark flex items-center justify-between transition-colors hover:border-brand-cyan/40">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-9 h-9 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                      <Camera className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-mono font-bold text-white uppercase tracking-wider">CAMERA</div>
-                      <div className="text-[11px] font-mono text-brand-mutedDark">Optical Input &amp; PIR Sensing</div>
-                    </div>
+                {/* 3 Sensing Input Nodes */}
+                <div className="grid grid-cols-3 gap-2">
+                  <div className="p-3 rounded-2xl bg-[#05070D] border border-[#182238] text-center space-y-1">
+                    <Mic className="w-4 h-4 text-[#35C8FF] mx-auto" />
+                    <span className="text-[10px] font-mono font-bold text-[#F5F7FF] block">VOICE</span>
+                    <span className="text-[9px] font-mono text-[#9DA7BC] block">Acoustic</span>
                   </div>
-                  <Badge variant="neutral">Input</Badge>
+                  <div className="p-3 rounded-2xl bg-[#05070D] border border-[#182238] text-center space-y-1">
+                    <Camera className="w-4 h-4 text-[#8B5CF6] mx-auto" />
+                    <span className="text-[10px] font-mono font-bold text-[#F5F7FF] block">VISUAL</span>
+                    <span className="text-[9px] font-mono text-[#9DA7BC] block">Optics</span>
+                  </div>
+                  <div className="p-3 rounded-2xl bg-[#05070D] border border-[#182238] text-center space-y-1">
+                    <Activity className="w-4 h-4 text-[#22D3EE] mx-auto" />
+                    <span className="text-[10px] font-mono font-bold text-[#F5F7FF] block">MOTION</span>
+                    <span className="text-[9px] font-mono text-[#9DA7BC] block">IMU/PIR</span>
+                  </div>
                 </div>
 
                 {/* Arrow Down */}
-                <div className="flex justify-center text-brand-cyan/60 py-0.5">
+                <div className="flex justify-center text-[#35C8FF]/70 py-0.5">
                   <ArrowDown className="w-4 h-4 animate-bounce" />
                 </div>
 
-                {/* Node 2: EDGE AI (Raspberry Pi 5) */}
-                <div className="p-3.5 rounded-xl bg-brand-dark/90 border border-brand-cyan/40 flex items-center justify-between transition-colors shadow-lg shadow-brand-cyan/5">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-9 h-9 rounded-lg bg-brand-accent/10 border border-brand-accent/40 flex items-center justify-center text-brand-accent">
-                      <Cpu className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-mono font-bold text-brand-accent uppercase tracking-wider">EDGE AI</div>
-                      <div className="text-[11px] font-mono text-white">Raspberry Pi 5 Compute</div>
-                    </div>
+                {/* Central AI Core */}
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-[#05070D] via-[#080B14] to-[#05070D] border border-[#35C8FF]/40 shadow-lg shadow-[#35C8FF]/10 text-center space-y-1">
+                  <div className="w-8 h-8 rounded-full bg-[#35C8FF]/10 border border-[#35C8FF]/40 flex items-center justify-center text-[#35C8FF] mx-auto mb-1 animate-pulse">
+                    <Cpu className="w-4 h-4" />
                   </div>
-                  <Badge variant="accent">Inference</Badge>
+                  <span className="text-xs font-mono font-bold text-[#35C8FF] uppercase tracking-wider block">MULTIMODAL AI CORE</span>
+                  <span className="text-[10px] font-mono text-[#9DA7BC] block">On-Chip Signal Quantization &amp; Fusion</span>
                 </div>
 
                 {/* Arrow Down */}
-                <div className="flex justify-center text-brand-cyan/60 py-0.5">
+                <div className="flex justify-center text-[#8B5CF6]/70 py-0.5">
                   <ArrowDown className="w-4 h-4 animate-bounce" />
                 </div>
 
-                {/* Node 3: DISPLAY / AUDIO / GSM */}
-                <div className="p-3.5 rounded-xl bg-brand-dark/90 border border-brand-borderDark flex items-center justify-between transition-colors hover:border-brand-cyan/40">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-9 h-9 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                      <Radio className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-mono font-bold text-white uppercase tracking-wider">DISPLAY / AUDIO / GSM</div>
-                      <div className="text-[11px] font-mono text-brand-mutedDark">Multimodal Telemetry Relay</div>
-                    </div>
+                {/* Distress Analysis */}
+                <div className="p-3.5 rounded-2xl bg-[#05070D] border border-[#182238] flex items-center justify-between">
+                  <div className="flex items-center space-x-2.5">
+                    <Zap className="w-4 h-4 text-[#8B5CF6]" />
+                    <span className="text-xs font-mono font-bold text-[#F5F7FF]">THREAT / DISTRESS ANALYSIS</span>
                   </div>
-                  <Badge variant="neutral">Relay</Badge>
+                  <Badge variant="accent">Sub-100ms</Badge>
                 </div>
 
                 {/* Arrow Down */}
-                <div className="flex justify-center text-brand-cyan/60 py-0.5">
+                <div className="flex justify-center text-[#39E58C]/70 py-0.5">
                   <ArrowDown className="w-4 h-4 animate-bounce" />
                 </div>
 
-                {/* Node 4: ALERT SYSTEM */}
-                <div className="p-3.5 rounded-xl bg-brand-dark/90 border border-brand-alert/40 flex items-center justify-between transition-colors">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-9 h-9 rounded-lg bg-brand-alert/10 border border-brand-alert/40 flex items-center justify-center text-brand-alert">
-                      <Bell className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-mono font-bold text-brand-alert uppercase tracking-wider">ALERT SYSTEM</div>
-                      <div className="text-[11px] font-mono text-white">Instant Siren &amp; Strobe Dispatch</div>
-                    </div>
+                {/* Alert Output */}
+                <div className="p-3.5 rounded-2xl bg-[#05070D] border border-[#39E58C]/40 flex items-center justify-between">
+                  <div className="flex items-center space-x-2.5">
+                    <Bell className="w-4 h-4 text-[#39E58C]" />
+                    <span className="text-xs font-mono font-bold text-[#39E58C]">MULTIMODAL ALERT DISPATCH</span>
                   </div>
                   <Badge variant="alert">Output</Badge>
                 </div>
@@ -160,984 +145,565 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* SECTION 2 — PROBLEM (LIGHT) */}
-      <Section theme="light" className="py-20 sm:py-28 border-b border-gray-200">
+      {/* 2. SECTION 2 — OUR PROJECT */}
+      <Section theme="dark" className="py-20 sm:py-32">
         <Container>
           <SectionHeading
-            theme="light"
-            eyebrow="The Security Challenge"
-            title="When Surveillance Is Not Enough"
-            subtitle="Legacy monitoring models leave severe gaps in perimeter safety, vulnerability response, and individual privacy."
+            eyebrow="// OUR PROJECT"
+            title="One edge device. Three senses. One decision."
+            subtitle="Most safety apps depend on a phone, a network connection, and a person remembering to open them. INNOVORTEX is a self-contained edge device that watches, listens, and feels — and only speaks up when it matters."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Card 01 */}
-            <Card variant="light" className="flex flex-col justify-between space-y-6 p-8 hover:shadow-md transition-shadow">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold font-mono text-brand-cyan">01</span>
-                  <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-cyan flex items-center justify-center">
-                    <ShieldAlert className="w-5 h-5" />
-                  </div>
-                </div>
-
-                <h3 className="text-xl font-bold font-heading text-brand-dark">Human Limitations</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Security teams cannot continuously monitor every restricted area.
-                </p>
-              </div>
+            <Card variant="dark" className="p-8 space-y-4">
+              <span className="text-3xl font-extrabold font-mono text-[#35C8FF]">01</span>
+              <h3 className="text-xl font-bold font-heading text-[#F5F7FF]">MULTIMODAL SIGNAL FUSION</h3>
+              <p className="text-sm text-[#9DA7BC] leading-relaxed">
+                Voice tone, gesture and body-motion streams are fused in real time so a single ambiguous signal never triggers a false alarm.
+              </p>
             </Card>
 
             {/* Card 02 */}
-            <Card variant="light" className="flex flex-col justify-between space-y-6 p-8 hover:shadow-md transition-shadow">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold font-mono text-brand-cyan">02</span>
-                  <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-alert flex items-center justify-center">
-                    <Clock className="w-5 h-5" />
-                  </div>
-                </div>
-
-                <h3 className="text-xl font-bold font-heading text-brand-dark">Delayed Response</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Conventional CCTV often becomes useful only after an incident occurs.
-                </p>
-              </div>
+            <Card variant="dark" className="p-8 space-y-4">
+              <span className="text-3xl font-extrabold font-mono text-[#8B5CF6]">02</span>
+              <h3 className="text-xl font-bold font-heading text-[#F5F7FF]">ON-DEVICE THREAT DETECTION</h3>
+              <p className="text-sm text-[#9DA7BC] leading-relaxed">
+                A compact deep learning model runs entirely on the edge chip, recognising distress patterns without streaming audio or video anywhere.
+              </p>
             </Card>
 
             {/* Card 03 */}
-            <Card variant="light" className="flex flex-col justify-between space-y-6 p-8 hover:shadow-md transition-shadow">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold font-mono text-brand-cyan">03</span>
-                  <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-accent flex items-center justify-center">
-                    <Lock className="w-5 h-5" />
-                  </div>
-                </div>
-
-                <h3 className="text-xl font-bold font-heading text-brand-dark">Connectivity &amp; Privacy</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Cloud-dependent systems can introduce latency, connectivity challenges and privacy concerns.
-                </p>
-              </div>
-            </Card>
-          </div>
-
-          {/* Closing Statement */}
-          <div className="mt-16 text-center">
-            <div className="inline-block p-6 sm:p-8 rounded-2xl bg-brand-dark text-white border border-brand-borderDark max-w-3xl mx-auto shadow-xl">
-              <p className="text-lg sm:text-xl font-bold font-heading text-brand-cyan">
-                INNOVORTEX is building the next layer of intelligent safety infrastructure.
+            <Card variant="dark" className="p-8 space-y-4">
+              <span className="text-3xl font-extrabold font-mono text-[#39E58C]">03</span>
+              <h3 className="text-xl font-bold font-heading text-[#F5F7FF]">ACCESSIBILITY ALERTS</h3>
+              <p className="text-sm text-[#9DA7BC] leading-relaxed">
+                Haptic, visual and silent-SMS alert paths make the device usable by people with hearing or speech impairments, in any environment.
               </p>
-            </div>
+            </Card>
+
+            {/* Card 04 */}
+            <Card variant="dark" className="p-8 space-y-4">
+              <span className="text-3xl font-extrabold font-mono text-[#22D3EE]">04</span>
+              <h3 className="text-xl font-bold font-heading text-[#F5F7FF]">PRIVACY BY ARCHITECTURE</h3>
+              <p className="text-sm text-[#9DA7BC] leading-relaxed">
+                No raw audio or video ever leaves the device — only an anonymised alert event is transmitted.
+              </p>
+            </Card>
+
+            {/* Card 05 */}
+            <Card variant="dark" className="p-8 space-y-4">
+              <span className="text-3xl font-extrabold font-mono text-[#FFB547]">05</span>
+              <h3 className="text-xl font-bold font-heading text-[#F5F7FF]">OFFLINE-FIRST</h3>
+              <p className="text-sm text-[#9DA7BC] leading-relaxed">
+                Inference and alert triggering work without network connectivity; escalation happens when connectivity returns.
+              </p>
+            </Card>
+
+            {/* Card 06 */}
+            <Card variant="dark" className="p-8 space-y-4">
+              <span className="text-3xl font-extrabold font-mono text-[#35C8FF]">06</span>
+              <h3 className="text-xl font-bold font-heading text-[#F5F7FF]">LOW-POWER EDGE HARDWARE</h3>
+              <p className="text-sm text-[#9DA7BC] leading-relaxed">
+                Optimised for constrained edge processors and designed for continuous operation.
+              </p>
+            </Card>
           </div>
         </Container>
       </Section>
 
-      {/* SECTION 3 — SAFEEDGE PRODUCT (DARK) */}
-      <Section theme="dark" className="py-20 sm:py-28 border-b border-brand-borderDark/60">
-        <Container>
-          <div className="max-w-4xl mx-auto text-center space-y-4 mb-16">
-            <span className="text-xs font-mono tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 px-3.5 py-1.5 rounded-full border border-brand-cyan/30">
-              OUR FIRST PRODUCT
-            </span>
-
-            <h2 className="text-4xl sm:text-5xl font-bold font-heading text-white tracking-tight">
-              Meet SafeEdge™
-            </h2>
-
-            <p className="text-xl font-mono text-brand-cyan font-semibold">
-              Edge AI Safety &amp; Alert Platform
-            </p>
-
-            <p className="text-base sm:text-lg text-brand-mutedDark font-body leading-relaxed max-w-2xl mx-auto pt-2">
-              SafeEdge™ is an Edge AI safety platform designed to detect activity, analyze visual information locally, evaluate configured safety conditions, and trigger multimodal alerts.
-            </p>
-          </div>
-
-          {/* Technical Highlights Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
-            {/* Highlight 1: Edge AI */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                <Cpu className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold font-heading text-white">Edge AI</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Autonomous neural model execution deployed on high-throughput micro-hardware.
-              </p>
-            </Card>
-
-            {/* Highlight 2: Computer Vision */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                <Eye className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold font-heading text-white">Computer Vision</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                High-resolution frame analysis evaluating spatial motion and perimeter boundaries.
-              </p>
-            </Card>
-
-            {/* Highlight 3: Local Processing */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center text-brand-accent">
-                <Lock className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold font-heading text-white">Local Processing</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Zero-cloud video transmission ensuring raw footage never leaves physical local memory.
-              </p>
-            </Card>
-
-            {/* Highlight 4: Real-time Inference */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                <Zap className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold font-heading text-white">Real-time Inference</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Sub-second decision engine evaluating security conditions instantly.
-              </p>
-            </Card>
-
-            {/* Highlight 5: Multimodal Alerts */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-brand-alert/10 border border-brand-alert/30 flex items-center justify-center text-brand-alert">
-                <Volume2 className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold font-heading text-white">Multimodal Alerts</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Integrated strobes, acoustic sirens, and tactile relay outputs for immediate deterrence.
-              </p>
-            </Card>
-
-            {/* Highlight 6: GSM Communication */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                <Radio className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold font-heading text-white">GSM Communication</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Cellular modem dispatch ensuring emergency alerts reach security desks over off-grid networks.
-              </p>
-            </Card>
-          </div>
-
-          <div className="text-center">
-            <Button href="/request-demo" variant="primary" size="lg">
-              Request a Demo <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </div>
-        </Container>
-      </Section>
-
-      {/* SECTION 4 — HOW IT WORKS (LIGHT) */}
-      <Section theme="light" className="py-20 sm:py-28 border-b border-gray-200">
+      {/* 3. SECTION 3 — HOW IT WORKS */}
+      <Section theme="surface" className="py-20 sm:py-32">
         <Container>
           <SectionHeading
-            theme="light"
-            eyebrow="5-Step Visual Process"
-            title="From Detection to Response"
-            subtitle="Explore how SafeEdge™ processes perimeter activity autonomously from physical trigger down to security personnel intervention."
+            eyebrow="// FROM SENSE TO RESPONSE"
+            title="Four stages. One intelligent decision."
+            subtitle="Autonomous real-time decision pipeline operating continuously at physical edge boundaries."
           />
 
-          {/* 5-Step Process Timeline Container */}
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 relative">
-              {/* Step 01 */}
-              <Card variant="light" className="p-6 flex flex-col justify-between space-y-4 hover:shadow-md transition-all relative">
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-2xl font-bold font-mono text-brand-cyan">01</span>
-                    <Badge variant="neutral">Detect</Badge>
-                  </div>
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {/* Stage 01 */}
+            <Card variant="feature" className="p-7 space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-2xl font-bold font-mono text-[#35C8FF]">01</span>
+                <Badge variant="cyan">SENSE</Badge>
+              </div>
+              <h3 className="text-lg font-bold font-heading text-[#F5F7FF]">Capture</h3>
+              <p className="text-xs text-[#9DA7BC] leading-relaxed">
+                Mic, camera and IMU sample audio, visual and motion data continuously on-device.
+              </p>
+            </Card>
 
-                  <h3 className="text-lg font-bold font-heading text-brand-dark mb-1">DETECT</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    Motion activates the monitoring pipeline.
-                  </p>
+            {/* Stage 02 */}
+            <Card variant="feature" className="p-7 space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-2xl font-bold font-mono text-[#8B5CF6]">02</span>
+                <Badge variant="accent">FUSE</Badge>
+              </div>
+              <h3 className="text-lg font-bold font-heading text-[#F5F7FF]">Multimodal Fusion</h3>
+              <p className="text-xs text-[#9DA7BC] leading-relaxed">
+                Signals are aligned and merged into a single situational representation.
+              </p>
+            </Card>
+
+            {/* Stage 03 */}
+            <Card variant="feature" className="p-7 space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-2xl font-bold font-mono text-[#39E58C]">03</span>
+                <Badge variant="alert">INFER</Badge>
+              </div>
+              <h3 className="text-lg font-bold font-heading text-[#F5F7FF]">Edge Inference</h3>
+              <p className="text-xs text-[#9DA7BC] leading-relaxed">
+                A lightweight deep learning model classifies the fused signal in real time.
+              </p>
+            </Card>
+
+            {/* Stage 04 */}
+            <Card variant="feature" className="p-7 space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-2xl font-bold font-mono text-[#FFB547]">04</span>
+                <Badge variant="neutral">ALERT</Badge>
+              </div>
+              <h3 className="text-lg font-bold font-heading text-[#F5F7FF]">Respond</h3>
+              <p className="text-xs text-[#9DA7BC] leading-relaxed">
+                Confirmed distress events trigger haptic, local and remote alerts instantly.
+              </p>
+            </Card>
+          </div>
+        </Container>
+      </Section>
+
+      {/* 4. SECTION 4 — PROTOTYPE PREVIEW */}
+      <Section theme="dark" className="py-20 sm:py-32">
+        <Container>
+          <SectionHeading
+            eyebrow="// PROTOTYPE PREVIEW"
+            title="Prototype Demonstration"
+            subtitle="Watch our AI-powered edge device prototype demonstrating real-time multimodal analysis for women's safety — intelligent threat detection, accessibility alerts, and privacy-preserving edge AI processing."
+          />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-6xl mx-auto">
+            {/* Left Video / Demo Player Card (7 cols) */}
+            <div className="lg:col-span-7">
+              <div className="relative rounded-3xl bg-[#0B1020] border border-[#182238] shadow-2xl p-8 sm:p-12 text-center overflow-hidden group">
+                <div className="w-16 h-16 rounded-full bg-[#35C8FF]/20 border border-[#35C8FF]/40 text-[#35C8FF] flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform cursor-pointer">
+                  <Play className="w-8 h-8 fill-current ml-1" />
                 </div>
-
-                <div className="pt-3 border-t border-gray-100 font-mono text-[11px] text-gray-500">
-                  <strong className="text-brand-dark block">Technology:</strong> Camera + PIR
+                <h4 className="text-xl font-bold font-heading text-[#F5F7FF] mb-2">Watch SafeEdge™ Interactive Console Demo</h4>
+                <p className="text-xs font-mono text-[#9DA7BC]">Click to open full frontend hardware console dashboard</p>
+                <div className="pt-6">
+                  <Button href="/dashboard" variant="primary" size="md">
+                    Launch Interactive Demo Console
+                  </Button>
                 </div>
-              </Card>
+              </div>
+            </div>
 
-              {/* Step 02 */}
-              <Card variant="light" className="p-6 flex flex-col justify-between space-y-4 hover:shadow-md transition-all relative">
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-2xl font-bold font-mono text-brand-cyan">02</span>
-                    <Badge variant="neutral">Analyze</Badge>
-                  </div>
+            {/* Right Walkthrough Details (5 cols) */}
+            <div className="lg:col-span-5 space-y-6">
+              <h3 className="text-2xl font-bold font-heading text-[#F5F7FF]">
+                End-to-End Multimodal Briefing
+              </h3>
 
-                  <h3 className="text-lg font-bold font-heading text-brand-dark mb-1">ANALYZE</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    The Edge AI system processes visual input locally.
-                  </p>
+              <p className="text-sm text-[#9DA7BC] leading-relaxed">
+                An end-to-end walkthrough of signal fusion, on-device inference and alert dispatch across physical perimeters.
+              </p>
+
+              <div className="space-y-3 pt-2">
+                <div className="p-3.5 rounded-2xl bg-[#0B1020] border border-[#182238] flex items-center justify-between text-xs font-mono">
+                  <span className="text-[#9DA7BC]">LATENCY BENCHMARK:</span>
+                  <span className="text-[#35C8FF] font-bold">REAL-TIME INFERENCE</span>
                 </div>
-
-                <div className="pt-3 border-t border-gray-100 font-mono text-[11px] text-gray-500">
-                  <strong className="text-brand-dark block">Technology:</strong> Edge AI on RPi 5
+                <div className="p-3.5 rounded-2xl bg-[#0B1020] border border-[#182238] flex items-center justify-between text-xs font-mono">
+                  <span className="text-[#9DA7BC]">PROCESSING ISOLATION:</span>
+                  <span className="text-[#39E58C] font-bold">ON-DEVICE ONLY</span>
                 </div>
-              </Card>
-
-              {/* Step 03 */}
-              <Card variant="light" className="p-6 flex flex-col justify-between space-y-4 hover:shadow-md transition-all relative">
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-2xl font-bold font-mono text-brand-cyan">03</span>
-                    <Badge variant="neutral">Decide</Badge>
-                  </div>
-
-                  <h3 className="text-lg font-bold font-heading text-brand-dark mb-1">DECIDE</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    The system evaluates the configured safety condition.
-                  </p>
+                <div className="p-3.5 rounded-2xl bg-[#0B1020] border border-[#182238] flex items-center justify-between text-xs font-mono">
+                  <span className="text-[#9DA7BC]">OFF-GRID RESILIENCE:</span>
+                  <span className="text-[#FFB547] font-bold">OFFLINE-FIRST</span>
                 </div>
-
-                <div className="pt-3 border-t border-gray-100 font-mono text-[11px] text-gray-500">
-                  <strong className="text-brand-dark block">Evaluation:</strong> Logic Engine
-                </div>
-              </Card>
-
-              {/* Step 04 */}
-              <Card variant="light" className="p-6 flex flex-col justify-between space-y-4 hover:shadow-md transition-all relative">
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-2xl font-bold font-mono text-brand-cyan">04</span>
-                    <Badge variant="neutral">Alert</Badge>
-                  </div>
-
-                  <h3 className="text-lg font-bold font-heading text-brand-dark mb-1">ALERT</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    Warnings can be delivered through multiple channels.
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-gray-100 font-mono text-[11px] text-gray-500">
-                  <strong className="text-brand-dark block">Channels:</strong> Visual / Audio / GSM / Vibration
-                </div>
-              </Card>
-
-              {/* Step 05 */}
-              <Card variant="light" className="p-6 flex flex-col justify-between space-y-4 hover:shadow-md transition-all relative">
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-2xl font-bold font-mono text-brand-cyan">05</span>
-                    <Badge variant="neutral">Respond</Badge>
-                  </div>
-
-                  <h3 className="text-lg font-bold font-heading text-brand-dark mb-1">RESPOND</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    Security personnel can take appropriate action.
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-gray-100 font-mono text-[11px] text-gray-500">
-                  <strong className="text-brand-dark block">Action:</strong> Human Dispatch
-                </div>
-              </Card>
+              </div>
             </div>
           </div>
         </Container>
       </Section>
 
-      {/* SECTION 5 — WHY EDGE AI (DARK) */}
-      <Section theme="dark" className="py-20 sm:py-28 border-b border-brand-borderDark/60">
+      {/* 5. SECTION 5 — TECHNOLOGY */}
+      <Section theme="surface" className="py-20 sm:py-32">
         <Container>
           <SectionHeading
-            theme="dark"
-            eyebrow="WHY EDGE AI"
-            title="Intelligence at the Edge. Process Locally. Respond Faster."
-            subtitle="Processing computer vision at the local hardware boundary removes latency bottlenecks and guarantees data privacy."
+            eyebrow="// TECHNOLOGY"
+            title="Built to think at the edge."
+            subtitle="Deep-tech hardware and neural model pipeline powering SafeEdge™ platform."
+          />
+
+          {/* Complete 5-Node Visual Flow Architecture */}
+          <div className="p-8 sm:p-12 rounded-3xl bg-[#0B1020] border border-[#182238] shadow-2xl max-w-5xl mx-auto space-y-8">
+            <div className="text-xs font-mono text-[#35C8FF] tracking-widest uppercase text-center font-bold">
+              END-TO-END SYSTEM PIPELINE
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-3 font-mono text-xs text-center">
+              <div className="px-4 py-2.5 rounded-2xl bg-[#05070D] border border-[#182238] text-[#F5F7FF] w-full md:w-auto">
+                <span className="text-[#35C8FF] font-bold block">INPUT</span>
+                <span className="text-[10px] text-[#9DA7BC]">Mic / Camera / IMU</span>
+              </div>
+
+              <ArrowRight className="w-4 h-4 text-[#35C8FF] hidden md:block" />
+              <ArrowDown className="w-4 h-4 text-[#35C8FF] md:hidden" />
+
+              <div className="px-4 py-2.5 rounded-2xl bg-[#05070D] border border-[#182238] text-[#F5F7FF] w-full md:w-auto">
+                <span className="text-[#8B5CF6] font-bold block">EDGE DEVICE</span>
+                <span className="text-[10px] text-[#9DA7BC]">Low-Power Compute</span>
+              </div>
+
+              <ArrowRight className="w-4 h-4 text-[#35C8FF] hidden md:block" />
+              <ArrowDown className="w-4 h-4 text-[#35C8FF] md:hidden" />
+
+              <div className="px-4 py-2.5 rounded-2xl bg-[#05070D] border border-[#182238] text-[#F5F7FF] w-full md:w-auto">
+                <span className="text-[#35C8FF] font-bold block">AI PIPELINE</span>
+                <span className="text-[10px] text-[#9DA7BC]">Fusion &amp; Model</span>
+              </div>
+
+              <ArrowRight className="w-4 h-4 text-[#35C8FF] hidden md:block" />
+              <ArrowDown className="w-4 h-4 text-[#35C8FF] md:hidden" />
+
+              <div className="px-4 py-2.5 rounded-2xl bg-[#05070D] border border-[#182238] text-[#F5F7FF] w-full md:w-auto">
+                <span className="text-[#39E58C] font-bold block">DECISION</span>
+                <span className="text-[10px] text-[#9DA7BC]">Safety Event</span>
+              </div>
+
+              <ArrowRight className="w-4 h-4 text-[#35C8FF] hidden md:block" />
+              <ArrowDown className="w-4 h-4 text-[#35C8FF] md:hidden" />
+
+              <div className="px-4 py-2.5 rounded-2xl bg-[#05070D] border border-[#182238] text-[#F5F7FF] w-full md:w-auto">
+                <span className="text-[#FFB547] font-bold block">ALERT LAYER</span>
+                <span className="text-[10px] text-[#9DA7BC]">Haptic/Visual/Audio/GSM</span>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* 6. SECTION 6 — WHY EDGE */}
+      <Section theme="dark" className="py-20 sm:py-32">
+        <Container>
+          <SectionHeading
+            title="Why intelligence belongs on the edge."
+            subtitle="Processing neural networks at the hardware boundary eliminates cloud bottlenecks and protects privacy."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Feature 01 */}
-            <Card variant="dark" className="p-8 space-y-4 hover:border-brand-cyan/50 transition-colors">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-cyan">01</span>
-                <Badge variant="cyan">LOW LATENCY</Badge>
-              </div>
-              <h3 className="text-xl font-bold font-heading text-white">LOW LATENCY</h3>
-              <p className="text-sm text-brand-mutedDark leading-relaxed">
-                Real-time processing without depending on continuous cloud communication.
+            {/* LOW LATENCY */}
+            <Card variant="feature" className="p-8 sm:p-10 space-y-4">
+              <Badge variant="cyan">LOW LATENCY</Badge>
+              <h3 className="text-2xl font-bold font-heading text-[#F5F7FF]">Process locally and respond immediately.</h3>
+              <p className="text-sm text-[#9DA7BC] leading-relaxed">
+                Zero network queue delays — neural inference evaluates distress signals directly inside micro-processor memory.
               </p>
             </Card>
 
-            {/* Feature 02 */}
-            <Card variant="dark" className="p-8 space-y-4 hover:border-brand-cyan/50 transition-colors">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-accent">02</span>
-                <Badge variant="accent">PRIVACY FIRST</Badge>
-              </div>
-              <h3 className="text-xl font-bold font-heading text-white">PRIVACY FIRST</h3>
-              <p className="text-sm text-brand-mutedDark leading-relaxed">
-                Sensitive visual data can be processed locally rather than continuously transmitted.
+            {/* PRIVACY */}
+            <Card variant="feature" className="p-8 sm:p-10 space-y-4">
+              <Badge variant="accent">PRIVACY</Badge>
+              <h3 className="text-2xl font-bold font-heading text-[#F5F7FF]">Sensitive audio and visual information stays on-device.</h3>
+              <p className="text-sm text-[#9DA7BC] leading-relaxed">
+                Raw audio and visual frames never leave physical volatile RAM, eliminating continuous surveillance risks.
               </p>
             </Card>
 
-            {/* Feature 03 */}
-            <Card variant="dark" className="p-8 space-y-4 hover:border-brand-cyan/50 transition-colors">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-alert">03</span>
-                <Badge variant="alert">RESILIENT OPERATION</Badge>
-              </div>
-              <h3 className="text-xl font-bold font-heading text-white">RESILIENT OPERATION</h3>
-              <p className="text-sm text-brand-mutedDark leading-relaxed">
-                The system can continue core processing even when internet connectivity is unreliable.
+            {/* OFFLINE-FIRST */}
+            <Card variant="feature" className="p-8 sm:p-10 space-y-4">
+              <Badge variant="alert">OFFLINE-FIRST</Badge>
+              <h3 className="text-2xl font-bold font-heading text-[#F5F7FF]">Core inference and alerts do not depend on continuous connectivity.</h3>
+              <p className="text-sm text-[#9DA7BC] leading-relaxed">
+                Perimeter vigilance operates autonomously during power grid failures or remote internet outages.
               </p>
             </Card>
 
-            {/* Feature 04 */}
-            <Card variant="dark" className="p-8 space-y-4 hover:border-brand-cyan/50 transition-colors">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-cyan">04</span>
-                <Badge variant="cyan">LOWER CLOUD DEPENDENCY</Badge>
-              </div>
-              <h3 className="text-xl font-bold font-heading text-white">LOWER CLOUD DEPENDENCY</h3>
-              <p className="text-sm text-brand-mutedDark leading-relaxed">
-                Reduces the need for continuous cloud inference infrastructure.
+            {/* LOW POWER */}
+            <Card variant="feature" className="p-8 sm:p-10 space-y-4">
+              <Badge variant="neutral">LOW POWER</Badge>
+              <h3 className="text-2xl font-bold font-heading text-[#F5F7FF]">Designed for constrained edge hardware and continuous operation.</h3>
+              <p className="text-sm text-[#9DA7BC] leading-relaxed">
+                Quantized models optimized for low wattage micro-silicon ensuring extended battery backup operation.
               </p>
             </Card>
           </div>
         </Container>
       </Section>
 
-      {/* SECTION 6 — MULTIMODAL ALERTS (LIGHT) */}
-      <Section theme="light" className="py-20 sm:py-28 border-b border-gray-200">
+      {/* 7. SECTION 7 — MULTIMODAL ALERTS */}
+      <Section theme="surface" className="py-20 sm:py-32">
         <Container>
           <SectionHeading
-            theme="light"
-            eyebrow="ALERT LAYER"
-            title="One Detection. Multiple Ways to Respond."
-            subtitle="Extending safety beyond a single point of alert failure with redundant output channels."
+            eyebrow="// ALERT SYSTEM"
+            title="One event. Multiple ways to respond."
+            subtitle="Redundant output channels preventing single points of alert failure."
           />
 
-          {/* Central Visual Diagram */}
-          <div className="max-w-4xl mx-auto my-12 p-6 rounded-2xl bg-white border border-gray-200 shadow-lg text-center space-y-6">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 font-mono text-xs">
-              <div className="px-4 py-2 rounded-lg bg-brand-dark text-brand-cyan font-bold">
-                DETECTION
+          {/* Central Alert Flow Diagram */}
+          <div className="max-w-4xl mx-auto mb-12 p-8 rounded-3xl bg-[#0B1020] border border-[#182238] text-center space-y-6 shadow-2xl">
+            <div className="inline-block px-5 py-2 rounded-full bg-[#39E58C]/10 border border-[#39E58C]/30 text-[#39E58C] font-mono text-xs font-bold">
+              DISTRESS DETECTED
+            </div>
+            <div className="flex justify-center text-[#35C8FF]/70">
+              <ArrowDown className="w-5 h-5 animate-bounce" />
+            </div>
+            <div className="inline-block px-5 py-2 rounded-full bg-[#35C8FF]/10 border border-[#35C8FF]/30 text-[#35C8FF] font-mono text-xs font-bold">
+              ALERT ENGINE
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+              <div className="p-4 rounded-2xl bg-[#05070D] border border-[#35C8FF]/30 text-center space-y-1">
+                <Vibrate className="w-5 h-5 text-[#35C8FF] mx-auto" />
+                <span className="text-xs font-mono font-bold text-[#F5F7FF] block">HAPTIC</span>
+                <span className="text-[10px] text-[#9DA7BC] block">Tactile Pulse</span>
               </div>
-              <ArrowRight className="w-4 h-4 text-brand-dark hidden md:block" />
-              <ArrowDown className="w-4 h-4 text-brand-dark md:hidden" />
-              <div className="px-4 py-2 rounded-lg bg-brand-dark text-brand-accent font-bold">
-                ALERT ENGINE
+
+              <div className="p-4 rounded-2xl bg-[#05070D] border border-[#8B5CF6]/30 text-center space-y-1">
+                <Monitor className="w-5 h-5 text-[#8B5CF6] mx-auto" />
+                <span className="text-xs font-mono font-bold text-[#F5F7FF] block">VISUAL</span>
+                <span className="text-[10px] text-[#9DA7BC] block">Strobe Light</span>
               </div>
-              <ArrowRight className="w-4 h-4 text-brand-dark hidden md:block" />
-              <ArrowDown className="w-4 h-4 text-brand-dark md:hidden" />
-              <div className="px-4 py-2 rounded-lg bg-brand-dark text-brand-alert font-bold">
-                VISUAL | AUDIO | VIBRATION | GSM
+
+              <div className="p-4 rounded-2xl bg-[#05070D] border border-[#FFB547]/30 text-center space-y-1">
+                <Volume2 className="w-5 h-5 text-[#FFB547] mx-auto" />
+                <span className="text-xs font-mono font-bold text-[#F5F7FF] block">AUDIO</span>
+                <span className="text-[10px] text-[#9DA7BC] block">Acoustic Siren</span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-[#05070D] border border-[#39E58C]/30 text-center space-y-1">
+                <Smartphone className="w-5 h-5 text-[#39E58C] mx-auto" />
+                <span className="text-xs font-mono font-bold text-[#F5F7FF] block">GSM / SMS</span>
+                <span className="text-[10px] text-[#9DA7BC] block">Silent Dispatch</span>
               </div>
             </div>
           </div>
+        </Container>
+      </Section>
 
-          {/* 4 Alert Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {/* Visual */}
-            <Card variant="light" className="p-6 space-y-3 hover:shadow-md transition-shadow">
-              <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-cyan flex items-center justify-center">
-                <Monitor className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold font-heading text-brand-dark">VISUAL</h3>
-              <p className="text-xs text-gray-600 leading-relaxed">Display-based warning</p>
-            </Card>
-
-            {/* Audio */}
-            <Card variant="light" className="p-6 space-y-3 hover:shadow-md transition-shadow">
-              <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-alert flex items-center justify-center">
-                <Volume2 className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold font-heading text-brand-dark">AUDIO</h3>
-              <p className="text-xs text-gray-600 leading-relaxed">Voice / speaker alert</p>
-            </Card>
-
-            {/* Vibration */}
-            <Card variant="light" className="p-6 space-y-3 hover:shadow-md transition-shadow">
-              <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-accent flex items-center justify-center">
-                <Vibrate className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold font-heading text-brand-dark">VIBRATION</h3>
-              <p className="text-xs text-gray-600 leading-relaxed">Accessible tactile notification</p>
-            </Card>
-
-            {/* GSM */}
-            <Card variant="light" className="p-6 space-y-3 hover:shadow-md transition-shadow">
-              <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-cyan flex items-center justify-center">
-                <Radio className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold font-heading text-brand-dark">GSM</h3>
-              <p className="text-xs text-gray-600 leading-relaxed">Remote emergency communication</p>
-            </Card>
-          </div>
-
-          {/* Statement */}
-          <div className="mt-12 text-center">
-            <p className="text-sm font-mono text-gray-600 bg-white border border-gray-200 px-6 py-3 rounded-full inline-block">
-              Designed so that a critical alert doesn&apos;t depend on a single communication channel.
+      {/* 8. SECTION 8 — PRIVACY */}
+      <Section theme="dark" className="py-20 sm:py-32">
+        <Container>
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-[#F5F7FF]">
+              Privacy isn&apos;t a policy. It&apos;s an architecture.
+            </h2>
+            <p className="text-base sm:text-lg text-[#9DA7BC] font-body leading-relaxed max-w-2xl mx-auto">
+              Raw audio and video remain on the device. Only the minimum event information required for escalation is transmitted.
             </p>
-          </div>
-        </Container>
-      </Section>
 
-      {/* SECTION 7 — TECHNOLOGY (DARK) */}
-      <Section theme="dark" className="py-20 sm:py-28 border-b border-brand-borderDark/60">
-        <Container>
-          <SectionHeading
-            theme="dark"
-            eyebrow="TECHNOLOGY STACK"
-            title="Built at the Edge"
-            subtitle="Deep-tech hardware and software components powering SafeEdge™ platform."
-          />
-
-          {/* Architecture Flow Diagram */}
-          <div className="max-w-4xl mx-auto mb-16 p-6 rounded-2xl bg-brand-cardDark border border-brand-borderDark text-center space-y-4">
-            <div className="text-xs font-mono text-brand-cyan tracking-widest uppercase">System Flow Architecture</div>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-3 font-mono text-xs">
-              <span className="px-3 py-1.5 rounded bg-brand-dark border border-brand-borderDark text-white">CAMERA + PIR</span>
-              <ArrowRight className="w-4 h-4 text-brand-cyan hidden md:block" />
-              <ArrowDown className="w-4 h-4 text-brand-cyan md:hidden" />
-              <span className="px-3 py-1.5 rounded bg-brand-dark border border-brand-cyan/40 text-brand-cyan">RASPBERRY PI 5</span>
-              <ArrowRight className="w-4 h-4 text-brand-cyan hidden md:block" />
-              <ArrowDown className="w-4 h-4 text-brand-cyan md:hidden" />
-              <span className="px-3 py-1.5 rounded bg-brand-dark border border-brand-accent/40 text-brand-accent">EDGE AI</span>
-              <ArrowRight className="w-4 h-4 text-brand-cyan hidden md:block" />
-              <ArrowDown className="w-4 h-4 text-brand-cyan md:hidden" />
-              <span className="px-3 py-1.5 rounded bg-brand-dark border border-brand-borderDark text-white">SAFETY DECISION</span>
-              <ArrowRight className="w-4 h-4 text-brand-cyan hidden md:block" />
-              <ArrowDown className="w-4 h-4 text-brand-cyan md:hidden" />
-              <span className="px-3 py-1.5 rounded bg-brand-dark border border-brand-alert/40 text-brand-alert">MULTIMODAL ALERTS</span>
+            {/* Privacy Data Isolation Visual */}
+            <div className="p-8 rounded-3xl bg-[#0B1020] border border-[#182238] shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-center mt-8">
+              <div className="p-4 rounded-2xl bg-[#05070D] border border-[#39E58C]/40 text-[#39E58C] font-bold w-full md:w-auto">
+                RAW DATA (Stays Local)
+              </div>
+              <ArrowRight className="w-4 h-4 text-[#35C8FF] hidden md:block" />
+              <ArrowDown className="w-4 h-4 text-[#35C8FF] md:hidden" />
+              <div className="p-4 rounded-2xl bg-[#05070D] border border-[#35C8FF]/40 text-[#35C8FF] font-bold w-full md:w-auto">
+                ANONYMISED EVENT
+              </div>
+              <ArrowRight className="w-4 h-4 text-[#35C8FF] hidden md:block" />
+              <ArrowDown className="w-4 h-4 text-[#35C8FF] md:hidden" />
+              <div className="p-4 rounded-2xl bg-[#05070D] border border-[#8B5CF6]/40 text-[#8B5CF6] font-bold w-full md:w-auto">
+                REMOTE ALERT
+              </div>
             </div>
           </div>
-
-          {/* 5 Technology Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
-            {/* Tech 1 */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                <Cpu className="w-5 h-5" />
-              </div>
-              <h3 className="text-sm font-bold font-heading text-white">EDGE COMPUTING</h3>
-              <ul className="space-y-1.5 pt-2 border-t border-brand-borderDark text-xs font-mono text-brand-mutedDark">
-                <li className="flex items-center"><CheckCircle className="w-3 h-3 text-brand-cyan mr-1.5" /> Raspberry Pi 5</li>
-                <li className="flex items-center"><CheckCircle className="w-3 h-3 text-brand-cyan mr-1.5" /> On-device inference</li>
-              </ul>
-            </Card>
-
-            {/* Tech 2 */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                <Eye className="w-5 h-5" />
-              </div>
-              <h3 className="text-sm font-bold font-heading text-white">COMPUTER VISION</h3>
-              <ul className="space-y-1.5 pt-2 border-t border-brand-borderDark text-xs font-mono text-brand-mutedDark">
-                <li className="flex items-center"><CheckCircle className="w-3 h-3 text-brand-cyan mr-1.5" /> Camera module</li>
-                <li className="flex items-center"><CheckCircle className="w-3 h-3 text-brand-cyan mr-1.5" /> Real-time visual analysis</li>
-              </ul>
-            </Card>
-
-            {/* Tech 3 */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center text-brand-accent">
-                <Activity className="w-5 h-5" />
-              </div>
-              <h3 className="text-sm font-bold font-heading text-white">SENSING</h3>
-              <ul className="space-y-1.5 pt-2 border-t border-brand-borderDark text-xs font-mono text-brand-mutedDark">
-                <li className="flex items-center"><CheckCircle className="w-3 h-3 text-brand-accent mr-1.5" /> PIR motion sensing</li>
-                <li className="flex items-center"><CheckCircle className="w-3 h-3 text-brand-accent mr-1.5" /> Tamper / event detection</li>
-              </ul>
-            </Card>
-
-            {/* Tech 4 */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-brand-alert/10 border border-brand-alert/30 flex items-center justify-center text-brand-alert">
-                <Radio className="w-5 h-5" />
-              </div>
-              <h3 className="text-sm font-bold font-heading text-white">ALERT LAYER</h3>
-              <ul className="space-y-1.5 pt-2 border-t border-brand-borderDark text-xs font-mono text-brand-mutedDark">
-                <li className="flex items-center"><CheckCircle className="w-3 h-3 text-brand-alert mr-1.5" /> Display</li>
-                <li className="flex items-center"><CheckCircle className="w-3 h-3 text-brand-alert mr-1.5" /> Speaker</li>
-                <li className="flex items-center"><CheckCircle className="w-3 h-3 text-brand-alert mr-1.5" /> Vibration</li>
-                <li className="flex items-center"><CheckCircle className="w-3 h-3 text-brand-alert mr-1.5" /> GSM communication</li>
-              </ul>
-            </Card>
-
-            {/* Tech 5 */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                <Layers className="w-5 h-5" />
-              </div>
-              <h3 className="text-sm font-bold font-heading text-white">AI LAYER</h3>
-              <ul className="space-y-1.5 pt-2 border-t border-brand-borderDark text-xs font-mono text-brand-mutedDark">
-                <li className="flex items-center"><CheckCircle className="w-3 h-3 text-brand-cyan mr-1.5" /> CV model</li>
-                <li className="flex items-center"><CheckCircle className="w-3 h-3 text-brand-cyan mr-1.5" /> Model optimization</li>
-                <li className="flex items-center"><CheckCircle className="w-3 h-3 text-brand-cyan mr-1.5" /> Real-time pipeline</li>
-              </ul>
-            </Card>
-          </div>
         </Container>
       </Section>
 
-      {/* SECTION 8 — SOLUTIONS (LIGHT) */}
-      <Section theme="light" className="py-20 sm:py-28 border-b border-gray-200">
+      {/* 9. SECTION 9 — USE CASES */}
+      <Section theme="surface" className="py-20 sm:py-32">
         <Container>
           <SectionHeading
-            theme="light"
-            eyebrow="WHERE IT CAN DEPLOY"
-            title="Built for Real-World Spaces"
+            eyebrow="// DESIGNED FOR REAL-WORLD ENVIRONMENTS"
+            title="Safety infrastructure that adapts to the environment."
             subtitle="Configurable edge AI safety architecture suitable for diverse physical environments."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Solution 01 */}
-            <Card variant="light" className="p-8 space-y-4 hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-cyan">01</span>
-                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-cyan flex items-center justify-center">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-              </div>
-              <h3 className="text-xl font-bold font-heading text-brand-dark">WOMEN&apos;S HOSTELS</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Intelligent monitoring for controlled-access environments.
-              </p>
+            <Card variant="dark" className="p-8 space-y-3">
+              <ShieldCheck className="w-6 h-6 text-[#35C8FF]" />
+              <h3 className="text-xl font-bold font-heading text-[#F5F7FF]">Women&apos;s Hostels</h3>
+              <p className="text-xs text-[#9DA7BC] leading-relaxed">Configurable monitoring for controlled-access residential perimeters.</p>
             </Card>
 
-            {/* Solution 02 */}
-            <Card variant="light" className="p-8 space-y-4 hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-cyan">02</span>
-                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-accent flex items-center justify-center">
-                  <GraduationCap className="w-5 h-5" />
-                </div>
-              </div>
-              <h3 className="text-xl font-bold font-heading text-brand-dark">EDUCATIONAL INSTITUTIONS</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Additional safety intelligence for educational environments.
-              </p>
+            <Card variant="dark" className="p-8 space-y-3">
+              <GraduationCap className="w-6 h-6 text-[#8B5CF6]" />
+              <h3 className="text-xl font-bold font-heading text-[#F5F7FF]">Educational Institutions</h3>
+              <p className="text-xs text-[#9DA7BC] leading-relaxed">Additional safety intelligence for school and university campus zones.</p>
             </Card>
 
-            {/* Solution 03 */}
-            <Card variant="light" className="p-8 space-y-4 hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-cyan">03</span>
-                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-alert flex items-center justify-center">
-                  <Building2 className="w-5 h-5" />
-                </div>
-              </div>
-              <h3 className="text-xl font-bold font-heading text-brand-dark">WORKPLACES</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Restricted-area monitoring for organizations.
-              </p>
+            <Card variant="dark" className="p-8 space-y-3">
+              <Building2 className="w-6 h-6 text-[#39E58C]" />
+              <h3 className="text-xl font-bold font-heading text-[#F5F7FF]">Workplaces</h3>
+              <p className="text-xs text-[#9DA7BC] leading-relaxed">Restricted-area monitoring for commercial corporate facilities.</p>
             </Card>
 
-            {/* Solution 04 */}
-            <Card variant="light" className="p-8 space-y-4 hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-cyan">04</span>
-                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-cyan flex items-center justify-center">
-                  <Hospital className="w-5 h-5" />
-                </div>
-              </div>
-              <h3 className="text-xl font-bold font-heading text-brand-dark">HEALTHCARE FACILITIES</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Configurable monitoring for sensitive zones.
-              </p>
+            <Card variant="dark" className="p-8 space-y-3">
+              <Hospital className="w-6 h-6 text-[#22D3EE]" />
+              <h3 className="text-xl font-bold font-heading text-[#F5F7FF]">Healthcare Facilities</h3>
+              <p className="text-xs text-[#9DA7BC] leading-relaxed">Configurable non-intrusive monitoring for sensitive medical zones.</p>
             </Card>
 
-            {/* Solution 05 */}
-            <Card variant="light" className="p-8 space-y-4 hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-cyan">05</span>
-                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-accent flex items-center justify-center">
-                  <Landmark className="w-5 h-5" />
-                </div>
-              </div>
-              <h3 className="text-xl font-bold font-heading text-brand-dark">PUBLIC INFRASTRUCTURE</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Potential deployment across selected public facilities.
-              </p>
+            <Card variant="dark" className="p-8 space-y-3">
+              <Landmark className="w-6 h-6 text-[#FFB547]" />
+              <h3 className="text-xl font-bold font-heading text-[#F5F7FF]">Public Infrastructure</h3>
+              <p className="text-xs text-[#9DA7BC] leading-relaxed">Potential deployment across selected public utility facilities.</p>
             </Card>
 
-            {/* Solution 06 */}
-            <Card variant="light" className="p-8 space-y-4 hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-cyan">06</span>
-                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-alert flex items-center justify-center">
-                  <WifiOff className="w-5 h-5" />
-                </div>
-              </div>
-              <h3 className="text-xl font-bold font-heading text-brand-dark">RURAL &amp; LOW-CONNECTIVITY AREAS</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Edge-first architecture for environments where reliable connectivity cannot always be assumed.
-              </p>
+            <Card variant="dark" className="p-8 space-y-3">
+              <WifiOff className="w-6 h-6 text-[#35C8FF]" />
+              <h3 className="text-xl font-bold font-heading text-[#F5F7FF]">Low-Connectivity Areas</h3>
+              <p className="text-xs text-[#9DA7BC] leading-relaxed">Edge-first architecture for environments where reliable broadband is unavailable.</p>
             </Card>
           </div>
         </Container>
       </Section>
 
-      {/* SECTION 9 — IMPACT (DARK) */}
-      <Section theme="dark" className="py-20 sm:py-28 border-b border-brand-borderDark/60">
+      {/* 10. SECTION 10 — SAFEEDGE PRODUCT */}
+      <Section theme="dark" className="py-20 sm:py-32">
         <Container>
           <SectionHeading
-            theme="dark"
-            eyebrow="TECHNOLOGY WITH A HUMAN PURPOSE"
-            title="Technology With a Human Purpose"
-            subtitle="Pioneering intelligent safety technology engineered to serve human vulnerability and protect dignity."
+            eyebrow="// SAFEEDGE™"
+            title="From prototype to product."
+            subtitle="SafeEdge™ Edge AI Safety &amp; Alert Platform."
           />
 
-          {/* 5 Impact Items */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto mb-16">
-            {/* Impact Item 1 */}
-            <Card variant="dark" className="p-6 space-y-3 hover:border-brand-cyan/50 transition-colors">
-              <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                <Heart className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold font-heading text-white">Women&apos;s Safety</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Perimeter vigilance engineered to protect vulnerable spaces.
-              </p>
-            </Card>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-6xl mx-auto">
+            {/* Left Product Panel (6 cols) */}
+            <div className="lg:col-span-6">
+              <Card variant="product" className="p-8 space-y-6">
+                <div className="flex items-center justify-between pb-4 border-b border-[#182238]">
+                  <span className="font-heading font-bold text-xl text-[#F5F7FF]">SafeEdge™ Node</span>
+                  <Badge variant="cyan">Hardware Platform</Badge>
+                </div>
+                <div className="space-y-2 text-xs font-mono text-[#9DA7BC]">
+                  <div className="flex justify-between py-1 border-b border-[#182238]/60"><span>Compute Silicon:</span> <span className="text-[#F5F7FF]">Raspberry Pi 5 Core</span></div>
+                  <div className="flex justify-between py-1 border-b border-[#182238]/60"><span>Sensing Inputs:</span> <span className="text-[#F5F7FF]">Camera + PIR + Mic</span></div>
+                  <div className="flex justify-between py-1 border-b border-[#182238]/60"><span>Alert Dispatch:</span> <span className="text-[#39E58C]">Multimodal Siren / GSM</span></div>
+                </div>
+              </Card>
+            </div>
 
-            {/* Impact Item 2 */}
-            <Card variant="dark" className="p-6 space-y-3 hover:border-brand-cyan/50 transition-colors">
-              <div className="w-10 h-10 rounded-lg bg-brand-alert/10 border border-brand-alert/30 flex items-center justify-center text-brand-alert">
-                <Volume2 className="w-5 h-5" />
+            {/* Right Product Features & Link (6 cols) */}
+            <div className="lg:col-span-6 space-y-6">
+              <h3 className="text-2xl font-bold font-heading text-[#F5F7FF]">SafeEdge™ Platform Capabilities</h3>
+              <div className="grid grid-cols-2 gap-3 text-xs font-mono">
+                <div className="p-3 rounded-2xl bg-[#0B1020] border border-[#182238] text-[#35C8FF]">Edge AI</div>
+                <div className="p-3 rounded-2xl bg-[#0B1020] border border-[#182238] text-[#35C8FF]">Computer Vision</div>
+                <div className="p-3 rounded-2xl bg-[#0B1020] border border-[#182238] text-[#39E58C]">Local Processing</div>
+                <div className="p-3 rounded-2xl bg-[#0B1020] border border-[#182238] text-[#35C8FF]">Real-Time Inference</div>
+                <div className="p-3 rounded-2xl bg-[#0B1020] border border-[#182238] text-[#FFB547]">Multimodal Alerts</div>
+                <div className="p-3 rounded-2xl bg-[#0B1020] border border-[#182238] text-[#35C8FF]">GSM Communication</div>
               </div>
-              <h3 className="text-base font-bold font-heading text-white">Accessible Alerts</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Multimodal visual, audio, tactile, and remote GSM dispatch.
-              </p>
-            </Card>
-
-            {/* Impact Item 3 */}
-            <Card variant="dark" className="p-6 space-y-3 hover:border-brand-cyan/50 transition-colors">
-              <div className="w-10 h-10 rounded-lg bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center text-brand-accent">
-                <Lock className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold font-heading text-white">Privacy-Conscious AI</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Zero-cloud video transmission protecting personal privacy.
-              </p>
-            </Card>
-
-            {/* Impact Item 4 */}
-            <Card variant="dark" className="p-6 space-y-3 hover:border-brand-cyan/50 transition-colors">
-              <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                <Cpu className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold font-heading text-white">Affordable Edge Computing</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Micro-hardware optimization democratizing intelligent protection.
-              </p>
-            </Card>
-
-            {/* Impact Item 5 */}
-            <Card variant="dark" className="p-6 space-y-3 hover:border-brand-cyan/50 transition-colors">
-              <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                <WifiOff className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold font-heading text-white">Low-Connectivity Deployment</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Autonomous operation in off-grid and low-bandwidth environments.
-              </p>
-            </Card>
-          </div>
-
-          {/* Statement Banner */}
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="p-6 sm:p-8 rounded-2xl bg-brand-cardDark border border-brand-cyan/30 shadow-2xl">
-              <p className="text-lg sm:text-xl font-bold font-heading text-brand-cyan">
-                &quot;We believe advanced technology should not be limited to high-cost infrastructure.&quot;
-              </p>
+              <Button href="/products/safeedge" variant="primary" size="md">
+                Explore SafeEdge Specs <ChevronRight className="w-4 h-4 ml-1" />
+              </Button>
             </div>
           </div>
         </Container>
       </Section>
 
-      {/* SECTION 10 — ABOUT (LIGHT) */}
-      <Section theme="light" className="py-20 sm:py-28 border-b border-gray-200">
+      {/* 11. SECTION 11 — TECHNICAL PROPOSAL */}
+      <Section theme="surface" className="py-20 sm:py-32">
         <Container>
-          <SectionHeading
-            theme="light"
-            eyebrow="ABOUT INNOVORTEX"
-            title="Who We Are"
-            subtitle="INNOVORTEX is a product-driven deep-tech startup developing practical AI, Edge Computing and intelligent sensing solutions for real-world challenges."
-          />
+          <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-[#0B1020] via-[#080B14] to-[#0B1020] border border-[#35C8FF]/30 shadow-2xl max-w-4xl mx-auto space-y-6 text-center">
+            <span className="text-xs font-mono tracking-widest text-[#35C8FF] uppercase bg-[#35C8FF]/10 px-3.5 py-1.5 rounded-full border border-[#35C8FF]/30">
+              {`// PROJECT DOWNLOAD`}
+            </span>
 
-          <div className="max-w-5xl mx-auto space-y-8">
-            <div className="text-xs font-mono tracking-widest text-brand-dark uppercase font-semibold text-center">
-              What We Build
+            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-[#F5F7FF]">
+              Read the full technical proposal.
+            </h2>
+
+            <p className="text-sm sm:text-base text-[#9DA7BC] leading-relaxed max-w-2xl mx-auto">
+              Explore the complete technical proposal covering the problem statement, objectives, system architecture, hardware, software stack, implementation methodology, innovation, accessibility, budget, roadmap and future scope.
+            </p>
+
+            <div className="flex items-center justify-center space-x-3 text-xs font-mono text-[#35C8FF]">
+              <Badge variant="cyan">PDF FORMAT</Badge>
+              <Badge variant="accent">FULL ARCHITECTURE</Badge>
+              <Badge variant="neutral">BUDGET &amp; ROADMAP</Badge>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {/* AI */}
-              <Card variant="light" className="p-6 text-center space-y-3 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-cyan flex items-center justify-center mx-auto">
-                  <Bot className="w-5 h-5" />
-                </div>
-                <h3 className="text-base font-bold font-heading text-brand-dark">AI</h3>
-              </Card>
-
-              {/* Edge Computing */}
-              <Card variant="light" className="p-6 text-center space-y-3 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-accent flex items-center justify-center mx-auto">
-                  <Cpu className="w-5 h-5" />
-                </div>
-                <h3 className="text-base font-bold font-heading text-brand-dark">Edge Computing</h3>
-              </Card>
-
-              {/* Computer Vision */}
-              <Card variant="light" className="p-6 text-center space-y-3 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-cyan flex items-center justify-center mx-auto">
-                  <Eye className="w-5 h-5" />
-                </div>
-                <h3 className="text-base font-bold font-heading text-brand-dark">Computer Vision</h3>
-              </Card>
-
-              {/* IoT */}
-              <Card variant="light" className="p-6 text-center space-y-3 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-alert flex items-center justify-center mx-auto">
-                  <Network className="w-5 h-5" />
-                </div>
-                <h3 className="text-base font-bold font-heading text-brand-dark">IoT</h3>
-              </Card>
-
-              {/* Intelligent Safety Systems */}
-              <Card variant="light" className="p-6 text-center space-y-3 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-lg bg-brand-dark text-brand-cyan flex items-center justify-center mx-auto">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <h3 className="text-base font-bold font-heading text-brand-dark">Intelligent Safety Systems</h3>
-              </Card>
+            <div className="pt-4">
+              <Button href="/resources" variant="primary" size="lg">
+                Download Proposal PDF <FileText className="w-4 h-4 ml-2" />
+              </Button>
             </div>
           </div>
         </Container>
       </Section>
 
-      {/* SECTION 11 — VISION (DARK) */}
-      <Section theme="dark" className="py-20 sm:py-28 border-b border-brand-borderDark/60">
+      {/* 12. SECTION 12 — VISION & ROADMAP */}
+      <Section theme="dark" className="py-20 sm:py-32">
         <Container>
           <SectionHeading
-            theme="dark"
-            eyebrow="OUR VISION"
-            title="Building Intelligent Products for the Real World"
-            subtitle="To build intelligent physical products that sense, understand and respond to real-world situations — making technology more accessible, resilient and human-centered."
-          />
-
-          {/* Simple Visual Flow */}
-          <div className="max-w-4xl mx-auto p-8 rounded-2xl bg-brand-cardDark border border-brand-borderDark text-center space-y-6">
-            <div className="text-xs font-mono text-brand-cyan tracking-widest uppercase">Strategic Product Vision</div>
-
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs">
-              <div className="p-4 rounded-xl bg-brand-dark border border-brand-cyan/40 w-full md:w-1/3">
-                <div className="text-[10px] text-brand-cyan uppercase tracking-wider mb-1">TODAY</div>
-                <div className="font-bold text-white text-sm">AI Safety Platform</div>
-              </div>
-
-              <ArrowRight className="w-5 h-5 text-brand-cyan hidden md:block" />
-              <ArrowDown className="w-5 h-5 text-brand-cyan md:hidden" />
-
-              <div className="p-4 rounded-xl bg-brand-dark border border-brand-accent/40 w-full md:w-1/3">
-                <div className="text-[10px] text-brand-accent uppercase tracking-wider mb-1">TOMORROW</div>
-                <div className="font-bold text-white text-sm">Intelligent Infrastructure</div>
-              </div>
-
-              <ArrowRight className="w-5 h-5 text-brand-cyan hidden md:block" />
-              <ArrowDown className="w-5 h-5 text-brand-cyan md:hidden" />
-
-              <div className="p-4 rounded-xl bg-brand-dark border border-brand-alert/40 w-full md:w-1/3">
-                <div className="text-[10px] text-brand-alert uppercase tracking-wider mb-1">INNOVORTEX</div>
-                <div className="font-bold text-white text-sm">AI PRODUCT ECOSYSTEM</div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* SECTION 12 — ROADMAP (LIGHT) */}
-      <Section theme="light" className="py-20 sm:py-28 border-b border-gray-200">
-        <Container>
-          <SectionHeading
-            theme="light"
-            eyebrow="ROADMAP"
-            title="Product &amp; Technical Evolution"
+            title="Engineering intelligence for a safer tomorrow."
             subtitle="Strategic milestones guiding our prototype validation, pilot trials, and commercial deployment."
           />
 
-          {/* Timeline: Horizontal on Desktop, Vertical on Mobile */}
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6">
-            {/* 2026 */}
-            <Card variant="light" className="p-6 space-y-3 relative hover:shadow-md transition-shadow">
+            <Card variant="dark" className="p-6 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-cyan">2026</span>
+                <span className="text-2xl font-bold font-mono text-[#35C8FF]">2026</span>
                 <Badge variant="cyan">Validation</Badge>
               </div>
-              <h3 className="text-lg font-bold font-heading text-brand-dark">Prototype Validation</h3>
-              <p className="text-xs text-gray-600 leading-relaxed font-mono">
-                Hardware carrier board validation and sub-100ms model quantization testing.
-              </p>
+              <h3 className="text-lg font-bold font-heading text-[#F5F7FF]">Prototype Validation</h3>
+              <p className="text-xs text-[#9DA7BC] font-mono leading-relaxed">Hardware carrier board validation and model quantization testing.</p>
             </Card>
 
-            {/* 2027 */}
-            <Card variant="light" className="p-6 space-y-3 relative hover:shadow-md transition-shadow">
+            <Card variant="dark" className="p-6 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-cyan">2027</span>
+                <span className="text-2xl font-bold font-mono text-[#8B5CF6]">2027</span>
                 <Badge variant="accent">Pilots</Badge>
               </div>
-              <h3 className="text-lg font-bold font-heading text-brand-dark">Pilot Deployments</h3>
-              <p className="text-xs text-gray-600 leading-relaxed font-mono">
-                Field trial deployments and product refinement across institutional perimeters.
-              </p>
+              <h3 className="text-lg font-bold font-heading text-[#F5F7FF]">Pilot Deployments</h3>
+              <p className="text-xs text-[#9DA7BC] font-mono leading-relaxed">Field trial deployments and product refinement across institutional perimeters.</p>
             </Card>
 
-            {/* 2028 */}
-            <Card variant="light" className="p-6 space-y-3 relative hover:shadow-md transition-shadow">
+            <Card variant="dark" className="p-6 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-cyan">2028</span>
+                <span className="text-2xl font-bold font-mono text-[#FFB547]">2028</span>
                 <Badge variant="alert">Scale</Badge>
               </div>
-              <h3 className="text-lg font-bold font-heading text-brand-dark">Institutional Deployment</h3>
-              <p className="text-xs text-gray-600 leading-relaxed font-mono">
-                Commercialization and enterprise fleet management rollout.
-              </p>
+              <h3 className="text-lg font-bold font-heading text-[#F5F7FF]">Institutional Deployment</h3>
+              <p className="text-xs text-[#9DA7BC] font-mono leading-relaxed">Commercialization and enterprise fleet management rollout.</p>
             </Card>
 
-            {/* FUTURE */}
-            <Card variant="light" className="p-6 space-y-3 relative hover:shadow-md transition-shadow">
+            <Card variant="dark" className="p-6 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold font-mono text-brand-cyan">FUTURE</span>
+                <span className="text-2xl font-bold font-mono text-[#39E58C]">FUTURE</span>
                 <Badge variant="neutral">Ecosystem</Badge>
               </div>
-              <h3 className="text-lg font-bold font-heading text-brand-dark">Multi-product AI + IoT Platform</h3>
-              <p className="text-xs text-gray-600 leading-relaxed font-mono">
-                Expanded sensor modalities and custom low-power edge NPU silicon.
-              </p>
+              <h3 className="text-lg font-bold font-heading text-[#F5F7FF]">Multi-product AI + IoT Platform</h3>
+              <p className="text-xs text-[#9DA7BC] font-mono leading-relaxed">Expanded sensor modalities and custom low-power edge NPU silicon.</p>
             </Card>
-          </div>
-
-          <div className="mt-8 text-center">
-            <span className="text-xs font-mono text-gray-500 italic">
-              * Roadmap dates are subject to alignment with the actual business plan.
-            </span>
           </div>
         </Container>
       </Section>
 
-      {/* SECTION 13 — TRUST / VALIDATION (DARK) */}
-      <Section theme="dark" className="py-20 sm:py-28">
-        <Container>
-          <SectionHeading
-            theme="dark"
-            eyebrow="VALIDATION"
-            title="Validation &amp; Development Journey"
-            subtitle="Transparent development benchmarks tracking technical, legal, and operational milestones."
-          />
-
-          {/* Current Status Tags */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            <span className="px-3.5 py-1.5 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan text-xs font-mono">
-              Prototype Development
-            </span>
-            <span className="px-3.5 py-1.5 rounded-full bg-brand-accent/10 border border-brand-accent/30 text-brand-accent text-xs font-mono">
-              Pitch / Incubation Journey
-            </span>
-            <span className="px-3.5 py-1.5 rounded-full bg-brand-alert/10 border border-brand-alert/30 text-brand-alert text-xs font-mono">
-              Technical Validation
-            </span>
-            <span className="px-3.5 py-1.5 rounded-full bg-brand-dark border border-brand-borderDark text-white text-xs font-mono">
-              IP Development
-            </span>
-          </div>
-
-          {/* 6 Category Placeholders Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {/* 1. Pitch Competitions */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                  <Award className="w-5 h-5" />
-                </div>
-                <Badge variant="cyan">Placeholder</Badge>
-              </div>
-              <h3 className="text-lg font-bold font-heading text-white">Pitch Competitions</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Development category tracking startup pitch events and technical showcases.
-              </p>
-            </Card>
-
-            {/* 2. Research / Prototype */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                  <FileCheck className="w-5 h-5" />
-                </div>
-                <Badge variant="accent">In Progress</Badge>
-              </div>
-              <h3 className="text-lg font-bold font-heading text-white">Research / Prototype</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                R&amp;D benchmarks validating local edge neural model quantization.
-              </p>
-            </Card>
-
-            {/* 3. Patent / IP */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <Badge variant="cyan">Placeholder</Badge>
-              </div>
-              <h3 className="text-lg font-bold font-heading text-white">Patent / IP</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Intellectual property pipeline covering edge decision safety algorithms.
-              </p>
-            </Card>
-
-            {/* 4. Incubation */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                  <Building className="w-5 h-5" />
-                </div>
-                <Badge variant="cyan">Placeholder</Badge>
-              </div>
-              <h3 className="text-lg font-bold font-heading text-white">Incubation</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Deep-tech incubator and acceleration program engagement track.
-              </p>
-            </Card>
-
-            {/* 5. Pilot Partners */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                  <Users className="w-5 h-5" />
-                </div>
-                <Badge variant="cyan">Placeholder</Badge>
-              </div>
-              <h3 className="text-lg font-bold font-heading text-white">Pilot Partners</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Institutional pilot partners evaluating SafeEdge™ perimeter hardware trials.
-              </p>
-            </Card>
-
-            {/* 6. Institutional Recognition */}
-            <Card variant="dark" className="p-6 space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                  <Target className="w-5 h-5" />
-                </div>
-                <Badge variant="cyan">Placeholder</Badge>
-              </div>
-              <h3 className="text-lg font-bold font-heading text-white">Institutional Recognition</h3>
-              <p className="text-xs text-brand-mutedDark leading-relaxed">
-                Industry standards and institutional safety governance recognitions.
-              </p>
-            </Card>
+      {/* 13. SECTION 13 — FINAL CTA */}
+      <Section theme="dark" className="py-20 sm:py-28 relative overflow-hidden">
+        <Container className="relative z-10">
+          <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-[#0B1020] via-[#8B5CF6]/10 to-[#0B1020] border border-[#8B5CF6]/30 shadow-2xl text-center space-y-6 max-w-4xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl font-bold font-heading text-[#F5F7FF] tracking-tight">
+              Let&apos;s build safer, smarter spaces.
+            </h2>
+            <p className="text-base sm:text-lg text-[#9DA7BC] font-body max-w-2xl mx-auto leading-relaxed">
+              Partner with INNOVORTEX to bring intelligent safety technology into real-world environments.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Button href="/request-demo" variant="primary" size="lg">
+                Request a Demo <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+              <Button href="/contact" variant="secondary" size="lg">
+                Contact Us
+              </Button>
+            </div>
           </div>
         </Container>
       </Section>

@@ -9,16 +9,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        space: {
+          bg: '#05070D',       // Primary space dark background
+          surface: '#080B14',  // Surface dark
+          card: '#0B1020',     // Panel dark card
+          border: '#182238',   // Border accent line
+        },
+        deep: {
+          white: '#F5F7FF',    // Primary high-contrast text
+          slate: '#9DA7BC',    // Secondary slate text
+          blue: '#35C8FF',     // Accent Blue
+          purple: '#8B5CF6',   // Accent Purple
+          cyan: '#22D3EE',     // Accent Cyan
+          green: '#39E58C',    // Success Green
+          amber: '#FFB547',    // Warning Amber
+        },
         brand: {
-          dark: '#07111F',      // Primary Deep Navy Dark
-          cyan: '#20D9FF',      // Secondary Electric Cyan
-          accent: '#39E58C',    // Accent Emerald Green
-          alert: '#FFB547',     // Alert Amber
-          danger: '#FF4D4D',    // Critical Alert Red
-          light: '#F6F8FA',     // Off-white light surface
-          cardDark: '#0D1B2E',  // Dark Card background
-          borderDark: '#1E2D42',// Dark Card border
-          mutedDark: '#8A99AD', // Muted text on dark
+          dark: '#05070D',
+          cyan: '#35C8FF',
+          accent: '#39E58C',
+          alert: '#FFB547',
+          danger: '#FF4D4D',
+          light: '#F6F8FA',
+          surface: '#EEF4F8',
+          cardDark: '#0B1020',
+          borderDark: '#182238',
+          mutedDark: '#9DA7BC',
         },
       },
       fontFamily: {

@@ -12,19 +12,19 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', href, children, ...props }, ref) => {
     const baseStyles =
-      'inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan disabled:pointer-events-none disabled:opacity-50 rounded-md';
+      'inline-flex items-center justify-center font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#35C8FF] active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 rounded-full cursor-pointer';
 
     const variants = {
-      primary: 'bg-brand-cyan text-brand-dark hover:bg-[#52E2FF] font-semibold shadow-sm',
-      secondary: 'bg-brand-dark text-white hover:bg-[#0D1B2E] border border-brand-borderDark',
-      outline: 'border border-brand-cyan/40 text-brand-cyan hover:bg-brand-cyan/10',
-      accent: 'bg-brand-accent text-brand-dark hover:bg-[#52EEA3] font-semibold',
-      ghost: 'text-gray-300 hover:text-white hover:bg-white/5',
+      primary: 'bg-gradient-to-r from-[#35C8FF] to-[#8B5CF6] text-[#05070D] font-bold shadow-lg shadow-[#35C8FF]/20 hover:shadow-[#8B5CF6]/30 hover:opacity-95',
+      secondary: 'bg-[#0B1020] text-[#F5F7FF] hover:bg-[#182238] border border-[#182238] hover:border-[#35C8FF]/40 shadow-md',
+      outline: 'border border-[#35C8FF]/40 text-[#35C8FF] hover:bg-[#35C8FF]/10 hover:border-[#35C8FF] shadow-xs',
+      accent: 'bg-[#39E58C] text-[#05070D] hover:bg-[#52EEA3] font-bold shadow-md shadow-[#39E58C]/20',
+      ghost: 'text-[#9DA7BC] hover:text-[#F5F7FF] hover:bg-white/5',
     };
 
     const sizes = {
-      sm: 'h-9 px-3 text-xs tracking-wider uppercase font-mono',
-      md: 'h-11 px-5 text-sm',
+      sm: 'h-9 px-4 text-xs font-mono font-semibold uppercase tracking-wider',
+      md: 'h-11 px-6 text-sm font-semibold',
       lg: 'h-13 px-8 text-base font-semibold',
     };
 
