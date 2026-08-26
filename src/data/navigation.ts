@@ -62,3 +62,5 @@ export const FOOTER_LINKS = {
     { label: 'Responsible AI Policy', href: '/responsible-ai' },
   ],
 };
+
+export const FOOTER_NAVIGATION = FOOTER_LINKS;

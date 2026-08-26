@@ -33,7 +33,6 @@ This repository contains the full-stack web architecture for **INNOVORTEX**, a d
 
 ## Project Structure
 
-```
 INNOVORTEX/
 ├── .github/                  # CI/CD Workflows, PR & Issue Templates
 │   ├── workflows/ci.yml
@@ -58,12 +57,13 @@ INNOVORTEX/
 │   └── types/                # Strict TypeScript interfaces
 ├── .env.example
 ├── .gitignore
+├── API_DOCUMENTATION.md
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
 └── SECURITY.md
-```
+
 
 ---
 
@@ -78,7 +78,7 @@ INNOVORTEX/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/innovortex/innovortex-website.git
+   git clone [https://github.com/innovortex/innovortex-website.git](https://github.com/innovortex/innovortex-website.git)
    cd innovortex-website
    ```
 
@@ -98,19 +98,17 @@ INNOVORTEX/
 
 Create `.env.local` from `.env.example`, set the admin credentials and signing secret, then start the local development server:
 
-```bash
-npm run dev
-```
+Bash
+npx cross-env NODE_ENV=development node server.mjs
+Open http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+API Documentation
+For full backend endpoint specifications, payload formats, and status codes, refer to API_DOCUMENTATION.md.
 
----
-
-## Code Quality & Verification
-
+Code Quality & Verification
 Run static analysis and type checks:
 
-```bash
+Bash
 # Run ESLint check
 npm run lint
 
@@ -119,73 +117,62 @@ npm run type-check
 
 # Format codebase with Prettier
 npm run format
-```
-
----
-
-## Build
-
+Build
 To compile a production build:
 
-```bash
+Bash
 npm run build
-```
-
 To test the production build locally:
 
-```bash
+Bash
 npm run start
-```
+Git Workflow & Team Contribution
+Branch Strategy
+All development work follows the strict git workflow below. Direct pushes to main are strictly prohibited.
 
----
-
-## Git Workflow & Team Contribution
-
-### Branch Strategy
-
-All development work follows the strict git workflow below. **Direct pushes to `main` are strictly prohibited.**
-
-```
 main (Production deployment)
   ↑
 develop (Staging & Integration)
   ↑
 feature/* or fix/* or chore/*
-```
+Branch Naming Conventions:
+feature/home-page
 
-#### Branch Naming Conventions:
-- `feature/home-page`
-- `feature/technology-page`
-- `feature/safeedge-page`
-- `feature/solutions`
-- `feature/dashboard`
-- `feature/contact`
-- `fix/navbar`
-- `fix/responsive-layout`
-- `chore/project-setup`
+feature/technology-page
 
----
+feature/safeedge-page
 
-## Pull Requests
+feature/solutions
 
-1. Create a feature branch off `develop`:
-   ```bash
-   git checkout develop
-   git pull origin develop
-   git checkout -b feature/my-new-feature
-   ```
-2. Commit changes using atomic, descriptive messages.
-3. Push branch and open a Pull Request targeting `develop`.
-4. Ensure CI pipeline checks (Lint, Type-check, Build) pass cleanly.
-5. Obtain approval from at least one code reviewer before merging.
+feature/dashboard
 
----
+feature/contact
 
-## Security Policy
+fix/navbar
 
-Security guidelines and vulnerability disclosure procedures are documented in [SECURITY.md](file:///Users/shivam/Downloads/railway/INNOVORTEX/SECURITY.md).
+fix/responsive-layout
 
-Never commit `.env`, API keys, or private certificates to source control.
+chore/project-setup
+
+Pull Requests
+Create a feature branch off develop:
+
+Bash
+git checkout develop
+git pull origin develop
+git checkout -b feature/my-new-feature
+Commit changes using atomic, descriptive messages.
+
+Push branch and open a Pull Request targeting develop.
+
+Ensure CI pipeline checks (Lint, Type-check, Build) pass cleanly.
+
+Obtain approval from at least one code reviewer before merging.
+
+Security Policy
+Security guidelines and vulnerability disclosure procedures are documented in SECURITY.md.
+
+Never commit .env, API keys, or private certificates to source control
 
 ---
 
