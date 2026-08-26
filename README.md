@@ -80,23 +80,23 @@ INNOVORTEX/
    ```bash
    git clone [https://github.com/innovortex/innovortex-website.git](https://github.com/innovortex/innovortex-website.git)
    cd innovortex-website
-Install dependencies:
+   ```
 
-Bash
-npm install
-Configure environment variables:
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Bash
-cp .env.example .env.local
-Ensure your .env.local contains:
+3. Copy environment configuration:
+   ```bash
+   cp .env.example .env.local
+   ```
 
-Code snippet
-PORT=3000
-NODE_ENV=development
-ADMIN_PASSWORD_HASH=your_admin_hash
-AUTH_JWT_SECRET=your_jwt_secret
-Development
-Start the local development server:
+---
+
+## Development
+
+Create `.env.local` from `.env.example`, set the admin credentials and signing secret, then start the local development server:
 
 Bash
 npx cross-env NODE_ENV=development node server.mjs
