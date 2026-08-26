@@ -6,15 +6,15 @@ export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
 }
 
-export const Section: React.FC<SectionProps> = ({ theme = 'dark', className, children, ...props }) => {
+export const Section: React.FC<SectionProps> = ({ theme = 'light', className, children, ...props }) => {
   const themeClasses = {
-    dark: 'bg-[#05070D] text-[#F5F7FF] border-b border-[#182238]/60',
-    light: 'bg-[#080B14] text-[#F5F7FF] border-b border-[#182238]/60',
-    surface: 'bg-[#0B1020] text-[#F5F7FF] border-b border-[#182238]/80',
+    dark: 'bg-[#07111F] text-white border-b border-brand-borderDark/40',
+    light: 'bg-[#F6F8FA] text-brand-dark border-b border-gray-200/60',
+    surface: 'bg-[#EEF4F8] text-brand-dark border-b border-gray-200/80',
   };
 
   return (
-    <section className={cn('py-20 sm:py-32 transition-colors duration-300 relative tech-grid-bg', themeClasses[theme], className)} {...props}>
+    <section className={cn('py-20 sm:py-32 transition-colors duration-300 relative', themeClasses[theme], className)} {...props}>
       {children}
     </section>
   );

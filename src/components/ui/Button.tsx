@@ -12,18 +12,18 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', href, children, ...props }, ref) => {
     const baseStyles =
-      'inline-flex items-center justify-center font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#35C8FF] active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 rounded-full cursor-pointer';
+      'inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 rounded-full cursor-pointer';
 
     const variants = {
-      primary: 'bg-gradient-to-r from-[#35C8FF] to-[#8B5CF6] text-[#05070D] font-bold shadow-lg shadow-[#35C8FF]/20 hover:shadow-[#8B5CF6]/30 hover:opacity-95',
-      secondary: 'bg-[#0B1020] text-[#F5F7FF] hover:bg-[#182238] border border-[#182238] hover:border-[#35C8FF]/40 shadow-md',
-      outline: 'border border-[#35C8FF]/40 text-[#35C8FF] hover:bg-[#35C8FF]/10 hover:border-[#35C8FF] shadow-xs',
-      accent: 'bg-[#39E58C] text-[#05070D] hover:bg-[#52EEA3] font-bold shadow-md shadow-[#39E58C]/20',
-      ghost: 'text-[#9DA7BC] hover:text-[#F5F7FF] hover:bg-white/5',
+      primary: 'bg-brand-cyan text-brand-dark hover:bg-[#52E2FF] font-semibold shadow-md hover:shadow-cyan-500/20',
+      secondary: 'bg-brand-dark text-white hover:bg-[#122238] shadow-md border border-brand-borderDark',
+      outline: 'border border-gray-300 dark:border-brand-borderDark text-brand-dark dark:text-white hover:bg-gray-100 dark:hover:bg-white/5 shadow-xs',
+      accent: 'bg-brand-accent text-brand-dark hover:bg-[#52EEA3] font-semibold shadow-md',
+      ghost: 'text-gray-600 dark:text-gray-300 hover:text-brand-dark dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5',
     };
 
     const sizes = {
-      sm: 'h-9 px-4 text-xs font-mono font-semibold uppercase tracking-wider',
+      sm: 'h-9 px-4 text-xs font-semibold uppercase tracking-wider',
       md: 'h-11 px-6 text-sm font-semibold',
       lg: 'h-13 px-8 text-base font-semibold',
     };
