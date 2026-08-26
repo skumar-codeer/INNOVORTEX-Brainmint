@@ -78,7 +78,7 @@ export const Navbar: React.FC = () => {
         <div className="flex lg:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-full text-brand-dark hover:bg-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+            className="min-w-[44px] min-h-[44px] p-2.5 rounded-full text-brand-dark hover:bg-gray-100 transition-colors flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
             aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
             aria-expanded={mobileMenuOpen}
           >
