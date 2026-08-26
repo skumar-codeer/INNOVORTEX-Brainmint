@@ -1,0 +1,176 @@
+{
+  "info": {
+    "name": "INNOVORTEX Backend API",
+    "description": "Contact, demo request, and website content APIs for the INNOVORTEX website.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Contact API",
+      "item": [
+        {
+          "name": "Submit Contact Inquiry",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Dr. Alex Vance\",\n  \"email\": \"alex.vance@institution.edu\",\n  \"phone\": \"+91 98765 43210\",\n  \"organization\": \"Apex Educational Trust\",\n  \"role\": \"Head of Security Infrastructure\",\n  \"message\": \"We want to evaluate SafeEdge for a campus perimeter.\",\n  \"agreeToPrivacy\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/contact",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "contact"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Invalid Contact Inquiry",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"\",\n  \"email\": \"not-an-email\",\n  \"phone\": \"123\",\n  \"organization\": \"\",\n  \"role\": \"\",\n  \"message\": \"Short\",\n  \"agreeToPrivacy\": false\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/contact",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "contact"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Demo Request API",
+      "item": [
+        {
+          "name": "Submit Demo Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"Sarah Jenkins\",\n  \"workEmail\": \"s.jenkins@campus-security.org\",\n  \"organizationName\": \"Global Educational Campus\",\n  \"organizationType\": \"Educational Institution / Campus\",\n  \"deploymentTimeline\": \"Within 3 Months\",\n  \"primaryConcern\": \"Women's Safety & Perimeter Vigilance\",\n  \"additionalNotes\": \"Pilot across two perimeter zones.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/demo-request",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "demo-request"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Invalid Demo Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"\",\n  \"workEmail\": \"bad-email\",\n  \"organizationName\": \"\",\n  \"organizationType\": \"\",\n  \"deploymentTimeline\": \"\",\n  \"primaryConcern\": \"\",\n  \"additionalNotes\": \"\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/demo-request",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "demo-request"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Website Content APIs",
+      "item": [
+        {
+          "name": "Products",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/products"
+          }
+        },
+        {
+          "name": "Technology",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/technology"
+          }
+        },
+        {
+          "name": "Solutions",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/solutions"
+          }
+        },
+        {
+          "name": "Impact",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/impact"
+          }
+        },
+        {
+          "name": "About",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/about"
+          }
+        },
+        {
+          "name": "Roadmap",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/roadmap"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
