@@ -10,6 +10,7 @@ export const ContactForm: React.FC = () => {
   const [inputs, setInputs] = useState<ContactFormInputs>({
     name: '',
     email: '',
+    phone: '',
     organization: '',
     role: '',
     message: '',
@@ -20,18 +21,34 @@ export const ContactForm: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = validateContactForm(inputs);
     setErrors(result.errors);
 
     if (result.isValid) {
       setIsSubmitting(true);
-      // Simulate API submission
-      setTimeout(() => {
-        setIsSubmitting(false);
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(inputs),
+        });
+        const payload = await response.json();
+
+        if (!response.ok) {
+          setErrors(payload.errors ?? {});
+          return;
+        }
+
         setSubmitted(true);
-      }, 1000);
+      } catch {
+        setErrors({ message: 'Unable to submit right now. Please try again shortly.' });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -83,6 +100,20 @@ export const ContactForm: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-xs font-mono uppercase text-gray-300 mb-2">
+            Phone Number <span className="text-brand-alert">*</span>
+          </label>
+          <input
+            type="tel"
+            value={inputs.phone}
+            onChange={(e) => setInputs({ ...inputs, phone: e.target.value })}
+            placeholder="+91 98765 43210"
+            className="w-full px-4 py-2.5 rounded bg-brand-dark border border-brand-borderDark text-white placeholder-gray-500 focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan text-sm"
+          />
+          {errors.phone && <p className="text-xs text-brand-danger mt-1 flex items-center"><AlertCircle className="w-3 h-3 mr-1" />{errors.phone}</p>}
+        </div>
+
         <div>
           <label className="block text-xs font-mono uppercase text-gray-300 mb-2">
             Organization / Campus <span className="text-brand-alert">*</span>

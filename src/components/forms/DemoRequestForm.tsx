@@ -21,17 +21,34 @@ export const DemoRequestForm: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = validateDemoRequestForm(inputs);
     setErrors(result.errors);
 
     if (result.isValid) {
       setIsSubmitting(true);
-      setTimeout(() => {
-        setIsSubmitting(false);
+      try {
+        const response = await fetch('/api/demo-request', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(inputs),
+        });
+        const payload = await response.json();
+
+        if (!response.ok) {
+          setErrors(payload.errors ?? {});
+          return;
+        }
+
         setSubmitted(true);
-      }, 1000);
+      } catch {
+        setErrors({ additionalNotes: 'Unable to submit right now. Please try again shortly.' });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 

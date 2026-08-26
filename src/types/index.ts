@@ -116,6 +116,7 @@ export interface NavLink {
 export interface ContactFormInputs {
   name: string;
   email: string;
+  phone: string;
   organization: string;
   role: string;
   message: string;

@@ -2,6 +2,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/.npm-cache
 
 # testing
 /coverage
@@ -12,6 +13,9 @@
 
 # production
 /build
+
+# local API submission storage
+/.data
 
 # debug logs
 npm-debug.log*
