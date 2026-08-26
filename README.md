@@ -16,7 +16,7 @@ This repository contains the full-stack web architecture for **INNOVORTEX**, a d
 - **Technical Architecture Diagram**: Conceptual pipeline visualization from camera & PIR sensors down to edge inference and multimodal alerts.
 - **Strict Data Isolation**: 100% decoupling of copy/metrics from JSX (`src/data/*`).
 - **Team Collaboration Ready**: Strict TypeScript, ESLint, Prettier, GitHub Actions CI/CD pipeline, PR and issue templates.
-- **Future Backend Ready**: Form validation logic and dynamic telemetry polling hooks ready for production API integration.
+- **SafeEdge Operational Backend**: Protected dashboard telemetry and event APIs, persistent local storage, signed admin sessions, and Socket.IO realtime updates.
 
 ---
 
@@ -96,7 +96,7 @@ INNOVORTEX/
 
 ## Development
 
-Start the local development server:
+Create `.env.local` from `.env.example`, set the admin credentials and signing secret, then start the local development server:
 
 ```bash
 npm run dev

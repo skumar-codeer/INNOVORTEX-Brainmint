@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_ENV=development node server.mjs",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.mjs",
+    "start:realtime": "NODE_ENV=production node server.mjs",
+    "dev:realtime": "NODE_ENV=development node server.mjs",
+    "generate:admin-password": "node scripts/hash-password.mjs",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "format": "prettier --write ."
@@ -16,6 +19,8 @@
     "next": "^15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3",
     "tailwind-merge": "^3.0.1"
   },
   "devDependencies": {

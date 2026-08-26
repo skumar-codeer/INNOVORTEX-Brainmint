@@ -61,6 +61,21 @@ All content endpoints return seeded website data from `src/data/*`.
 | `GET` | `/api/about` | Company summary, philosophy, and focus areas |
 | `GET` | `/api/roadmap` | Product roadmap milestones |
 
+## SafeEdge Dashboard APIs
+
+All SafeEdge operational endpoints require `Authorization: Bearer <access-token>`. Obtain a token through `POST /api/auth/login` with an `email` and `password` configured through environment variables.
+
+| Method | Endpoint | Access | Purpose |
+| --- | --- | --- | --- |
+| `POST` | `/api/auth/login` | Public, rate limited | Creates an eight-hour admin access token |
+| `GET` | `/api/dashboard/status` | Viewer+ | Current device and system health |
+| `PATCH` | `/api/dashboard/status` | Operator+ | Updates telemetry and broadcasts `status:updated` |
+| `GET` | `/api/events` | Viewer+ | Filterable event history; supports `event_type`, `device_id`, `severity`, `status`, `location`, `from`, `to`, `limit`, and `page` |
+| `POST` | `/api/events` | Operator+ | Persists a safety event and broadcasts `event:created` |
+| `GET` | `/api/events/recent` | Viewer+ | Most recent events, with optional `limit` |
+
+Run `npm run dev` or `npm start` to use the custom Socket.IO server. Dashboard clients connect with `socket.io-client` using `auth: { token }`; unauthenticated socket connections are rejected.
+
 ## Response Shape
 
 Successful responses:
